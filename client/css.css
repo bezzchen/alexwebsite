@@ -1,0 +1,322 @@
+@font-face {
+    font-family: 'montserrat';
+    src: url('../fontkit/montserrat.regular-webfont.woff2') format('woff2'),
+         url('../fontkit/montserrat.regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@media only screen and (max-width: 1300px) and (min-width: 281px) {
+    .showmobile {
+      display: block;
+    }
+    #title {
+        font-size: 54px;
+    }
+    #subtitle {
+        font-size: 22.5px;
+    }
+    #totaltitle {
+        padding: 10px;
+        padding-top: 50px;
+    }
+    .arrow {
+        width: 54.5px;
+        height: 74px;
+    }
+    #logomobile {
+        display: block;
+        position: absolute;
+        z-index: 4;
+        top: 10px;
+        left: 50%;
+        margin-left: -37.5px;
+    }
+    #threelines {
+        display: block;
+        position: absolute;
+        z-index: 4;
+        left: 25px;
+        top: 25px;
+        width: 35px;
+        height: 30px;
+    }
+    #foldlocation {
+        font-size: 60px;
+    }
+    #mobilehotelalert {
+        font-size: 20px;
+    }
+    .mobiletext {
+        font-size: 20px;
+    }
+
+
+    .hidemobile {
+      display: none;
+    }
+}
+@media only screen and (max-width: 280px) {
+    .showmobile {
+        display: block;
+      }
+      #title {
+          font-size: 40px;
+      }
+      #subtitle {
+          font-size: 22.5px;
+      }
+      #totaltitle {
+          padding: 10px;
+          padding-top: 50px;
+      }
+      .arrow {
+          width: 54.5px;
+          height: 74px;
+      }
+      #logomobile {
+          display: block;
+          position: absolute;
+          z-index: 4;
+          top: 10px;
+          left: 50%;
+          margin-left: -37.5px;
+      }
+      #threelines {
+          display: block;
+          position: absolute;
+          z-index: 4;
+          left: 25px;
+          top: 25px;
+          width: 35px;
+          height: 30px;
+      }
+      #foldlocation {
+        font-size: 43px;
+      }
+      .mobiletext {
+        font-size: 20px;
+    }
+  
+  
+      .hidemobile {
+        display: none;
+      }
+}
+
+@media only screen and (min-width: 1301px) {
+    .showmobile {
+      display: none;
+    }
+    #title {
+        font-size: 100px;
+    }
+    #subtitle {
+        font-size: 50px;
+    }
+    #totaltitle {
+        padding: 70px;
+    }
+    .arrow {
+        width: 109px;
+        height: 148px;
+    }
+    #logomobile {
+        display: none;
+    }
+    #threelines {
+        display:none;
+    }
+    #foldlocation {
+        font-size: 60px;
+    }
+    #mobilehotelalert {
+        font-size: 30px;
+    }
+    .mobiletext {
+        font-size: 20px;
+    }
+
+
+    .hidemobile {
+      display: block;
+    }
+}
+.arrow {
+    position: absolute;
+    z-index: 2;
+    top: 32%;
+    opacity: 65%;
+}
+body {
+    margin: 0;
+    overflow-x: hidden;
+    font-family: 'montserrat';
+}
+#topimage {
+    position: absolute;
+    padding: 0;
+    top: 0;
+    left: 0;
+    height: 75%;
+    width: 100%;
+}
+#topimage > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    opacity: 0;
+}
+#singleroomimg > img {
+    opacity: 0;
+}
+#black > img {
+    overflow: hidden;
+    position: absolute;
+    left: -1px;
+    top: 0;
+    width: 100.1%;
+    height: 30%;
+    z-index: 1;
+}
+#topBar {
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    height: 95px;
+    z-index: 1;
+}
+#topBar a{
+    color: white;
+    float: left;
+    text-align: center;
+    padding: 18px 18px;
+    font-size: 25px;
+    text-decoration: none;
+}
+@keyframes button {
+    from {color: white;}
+    to {color: rgb(241,194,50);}
+} 
+#topBar a:hover:not([id="book"]) {
+    animation-name: button;
+    animation-duration: 0.6s;
+    color: rgb(241,194,50); 
+}
+#video {
+    position: relative;
+}
+#title {
+    position:inherit;
+    text-align: center;
+    font-family: 'montserrat';
+}
+#subtitle {
+    font-family: 'montserrat';
+    text-align: center;
+    color: rgb(241,194,50);
+}
+#discription {
+    text-align: center;
+    font-family: 'montserrat';
+    line-height: 35px;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-bottom: 80px;
+}
+#notimage {
+    position:absolute;
+    top: 71%;
+    width: 100%;
+}
+.discoverimage {
+    object-fit: cover; 
+    width: 600px;
+    height: 600px;
+    overflow: hidden;
+    z-index: 1;
+}
+.discoverimagetext {
+    position:absolute;
+    left: 32%;
+    top: 53%;
+    font-size: 40px;
+    text-align: center;
+}
+#discoverimageoverlay1 > img, #veil1 {
+    transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    -o-transition: all .2s ease;
+}
+#discoverimageoverlay1:hover > img {
+    overflow: hidden;
+    transform: scale(1.2);
+    -ms-transform:scale(1.2);  
+    -moz-transform:scale(1.2);   
+    -webkit-transform:scale(1.2);  
+    -o-transform:scale(1.2); 
+} 
+#discoverimageoverlay1:hover > #veil1 {
+    opacity: 1;
+    z-index: 3;
+} 
+#moreinfo1 {
+    text-align: center;
+    font-size: 30px;
+    color: black;
+    font-weight: 300;
+}
+#veil1 {
+    position: absolute;
+    width: 600px;
+    height: 100%;
+    background-color: rgb(0,0,0,0.5);
+    opacity: 0;
+}
+#ourrooms1 {
+    position:absolute;
+    width: 600px;
+    top: 46%;
+    text-align: center;
+    z-index: 1;
+    font-size: 40px;
+}
+#singleroom {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    margin-bottom: 5%;
+}
+#singleroomimg {
+    margin-left: 100px;
+    width: 500px;
+    height: 500px;
+}
+#singleroomimg > img {
+    position:absolute;
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+    object-position: center;
+}
+#singleroomimg > a {
+    top: 45%;
+    position: absolute;
+    z-index: 1;
+}
+#sidenav a {
+    padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+#sidenav a:hover {
+  color: rgb(241,194,50);
+}
