@@ -293,19 +293,19 @@ body {
     margin-bottom: 5%;
 }
 #singleroomimg {
-    margin-left: 100px;
-    width: 500px;
+    margin-left: 200px;
+    width: 700px;
     height: 500px;
 }
 #singleroomimg > img {
     position:absolute;
-    width: 500px;
+    width: 700px;
     height: 500px;
     object-fit: cover;
     object-position: center;
 }
 #singleroomimg > a {
-    top: 45%;
+    top: 36%;
     position: absolute;
     z-index: 1;
 }
