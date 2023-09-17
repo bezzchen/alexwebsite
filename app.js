@@ -1,7 +1,9 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const bodyParser = require('body-parser');
 
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname));
 
 app.get('/', function (req, res) {
@@ -42,23 +44,30 @@ const nodemailer = require('nodemailer');
 const transporter = nodemailer.createTransport({
   service: 'Gmail', // e.g., 'Gmail'
   auth: {
-    user: 'barry.phasel235@gmail.com',
-    pass: 'kittenisminecraft0002',
+    user: 'alexander21inn@gmail.com',
+    pass: 'kfmi txwt xmfb ktvx',
   },
 });
 
 // ...
 
 app.post('/contact-form-process', (req, res) => {
-  const name = req.body.Name;
-  const email = req.body.Email;
-  const message = req.body.Message;
-
-  const mailOptions = {
-    from: 'barry.phasel235@gmail.com',
+    const name = req.body.Name;
+    const lastName = req.body.lastname;
+    const email = req.body.Email;
+    const contactNumber = req.body.contactnumber;
+    const subject = req.body.subject;
+    const mailOptions = {
+    from: 'alexander21inn@gmail.com',
     to: 'barry.phasel235@gmail.com', // Replace with the recipient's email address
     subject: 'New form submission',
-    text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+    text: `
+      Name: ${name}
+      Last Name: ${lastName}
+      Email: ${email}
+      Contact Number: ${contactNumber}
+      Subject: ${subject}
+    `,
   };
 
   transporter.sendMail(mailOptions, (error, info) => {
