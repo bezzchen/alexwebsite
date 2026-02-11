@@ -1,5 +1,5 @@
+import "./globals.css";
 import Header from "../components/Header";
-import "./globals.css"
 
 export default function RootLayout({
   children,
@@ -8,16 +8,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <Header
-          logo="MyLogo"
-          navItems={[
-            { label: "Home", href: "/" },
-            { label: "Projects", href: "/projects" },
-            { label: "Contact", href: "/contact" },
-          ]}
-        />
-        {children}
+      <body className="min-h-screen bg-white text-black">
+        <Header />
+        <main>{children}</main>
       </body>
     </html>
   );
