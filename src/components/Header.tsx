@@ -12,7 +12,7 @@ type NavItem = {
     return (
       <header className="fixed top-0 z-50 w-full bg-white border-b">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
-          <div className="font-bold text-lg">{logo}</div>
+          <img src="/images/alexanderinnlogo.png" alt="logo"/>
   
           <nav className="flex gap-6">
             {navItems.map((item) => (
