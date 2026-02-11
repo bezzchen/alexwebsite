@@ -9,7 +9,7 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image
-            src="/logo.png"
+            src="/alexanderinnlogo.png"
             alt="Hotel Logo"
             width={120}
             height={40}
