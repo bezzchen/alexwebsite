@@ -9,9 +9,9 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image
-            src="/alexanderinnlogo.png"
+            src="/images/alexanderinnlogo.png"
             alt="Hotel Logo"
-            width={120}
+            width={40}
             height={40}
             priority
           />
