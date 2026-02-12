@@ -27,6 +27,20 @@ export default function Header() {
           </Link>
 
           <Link
+            href="/news"
+            className="text-gray-700 hover:text-black transition-colors"
+          >
+            News
+          </Link>
+
+          <Link
+            href="/facilities"
+            className="text-gray-700 hover:text-black transition-colors"
+          >
+            facilities
+          </Link>
+
+          <Link
             href="/location"
             className="text-gray-700 hover:text-black transition-colors"
           >
