@@ -48,6 +48,20 @@ export default function Header() {
           </Link>
 
           <Link
+            href="/reviews"
+            className="text-gray-700 hover:text-black transition-colors"
+          >
+            Reviews
+          </Link>
+
+          <Link
+            href="/contact"
+            className="text-gray-700 hover:text-black transition-colors"
+          >
+            Contact
+          </Link>
+
+          <Link
             href="/book"
             className="rounded-md bg-black px-5 py-2 text-white transition hover:bg-gray-800"
           >
