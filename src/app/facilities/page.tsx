@@ -1,7 +1,7 @@
-export default function Rooms() {
+export default function Facilities() {
     return (
       <main className="pt-16">
-        Rooms content
+        Facilities content
       </main>
     );
   }

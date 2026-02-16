@@ -1,7 +1,7 @@
-export default function Rooms() {
+export default function Location() {
     return (
       <main className="pt-16">
-        Rooms content
+        Location content
       </main>
     );
   }
