@@ -8,7 +8,7 @@ export default function Page() {
           alt="Hero photo"
           width={1600}
           height={900}
-          className="w-full h-auto"
+          className="w-full h-[690px] object-cover"
         />
         <div className="flex flex-col gap-y-8">
           <h1 className="pt-8 text-6xl">
