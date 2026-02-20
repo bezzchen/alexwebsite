@@ -29,7 +29,7 @@ export default function Page() {
         </div>
         <div className="max-w-6xl h-[450px] mx-auto rounded-4xl overflow-hidden shadow-lg">
           <GoogleMapsEmbed 
-            apiKey=""
+            apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}
             height={450}
             width="100%"
             mode="place"
