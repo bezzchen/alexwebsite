@@ -2,7 +2,7 @@ import { GoogleMapsEmbed } from "@next/third-parties/google"
 export default function Location() {
     return (
       <main className="pt-16">
-        <div className="max-w-6xl h-[450px] mx-auto rounded-4xl overflow-hidden shadow-lg">
+        <div className="w-full h-[450px] mx-auto overflow-hidden shadow-lg pt-0">
           <GoogleMapsEmbed 
             apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}
             height={450}
