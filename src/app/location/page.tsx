@@ -13,10 +13,10 @@ export default function Location() {
         </div>
         <div className="flex flex-col text-center gap-y-8 max-w-4xl mx-auto">
           <h1 className="pt-8 text-6xl">
-              ALEXANDER INN
+              NEWMARKET LOCATION
           </h1>
           <h2 className="text-3xl text-yellow-500">
-            IN THE HEART OF NEWMARKET
+            Close and convenient
           </h2>
           <h2 className="text-3xl">
             Newmarket Accommodation
