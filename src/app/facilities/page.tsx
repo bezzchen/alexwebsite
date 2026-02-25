@@ -53,31 +53,31 @@ export default function Facilities() {
 
           On request <br /><br />
 
-          Toothbrush set
+          Toothbrush set <br /><br />
+
+          Soap <br /><br />
+
+          Shavers <br /><br />
+
+          Port-a-cot <br /><br />
+
+          Highchair <br /><br />
+
+          Baby Bath <br /><br />
+
+          Laundry service <br /><br />
+
+          Hair dryer <br /><br /> <br /><br />
+
           
-          Soap
 
-          Shavers
+          Check In/ Check Out <br /><br />
 
-          Port-a-cot
+          Check In 2pm - 8pm Monday - Friday <br /><br />
 
-          Highchair
+          Check In 2pm - 6 pm Saturday - Sunday and Public Holidays <br /><br />
 
-          Baby Bath
-
-          Laundry service
-
-          Hair dryer
-
-          
-
-          Check In/ Check Out
-
-          Check In 2pm - 8pm Monday - Friday
-
-          Check In 2pm - 6 pm Saturday - Sunday and Public Holidays
-
-          Check Out is 10am
+          Check Out is 10am <br /><br />
           </p>
         </div>
       </main>
