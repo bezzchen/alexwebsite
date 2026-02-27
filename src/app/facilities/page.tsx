@@ -1,7 +1,7 @@
 export default function Facilities() {
     return (
       <main className="pt-16">
-        <div className="flex flex-col gap-y-8">
+        <div className="flex flex-col gap-y-8 text-center">
           <h1 className="text-6xl">
             Hotel Facilities
           </h1>
