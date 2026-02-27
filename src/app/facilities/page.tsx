@@ -1,8 +1,17 @@
+import Image from "next/image";
+
 export default function Facilities() {
     return (
-      <main className="pt-16">
+      <main className="pt-4">
+        <Image
+          src="/images/0.jpg"
+          alt="Hero photo"
+          width={1600}
+          height={800}
+          className="w-full h-[660px] object-cover"
+        />
         <div className="flex flex-col gap-y-8 text-center">
-          <h1 className="text-6xl">
+          <h1 className="text-6xl mt-8">
             Hotel Facilities
           </h1>
           <h2 className="text-3xl">
