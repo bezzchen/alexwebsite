@@ -1,6 +1,6 @@
 export default function Reviews() {
     return (
-      <main className="pt-16">
+      <main className="pt-16 text-center max-w-4xl mx-auto space-y-8">
         <h1 className="text-6xl">
           Reviews
         </h1>
