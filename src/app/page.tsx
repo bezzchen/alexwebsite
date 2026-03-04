@@ -36,7 +36,21 @@ export default function Page() {
               mode="place"
               q="21+Alpers+AvenueEpsom,+Auckland+1023,+New+Zealand"
             />
-        </div>
+          </div>
+          <div className="flex">
+            <Image
+              src="/images/1.jpg"
+              alt="box1" 
+              width={500}
+              height={500}
+            />
+            <Image
+              src="/images/2.jpg"
+              alt="box1" 
+              width={500}
+              height={500}
+            />
+          </div>
         </div>
       </main>
     );
