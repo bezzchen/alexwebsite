@@ -37,18 +37,20 @@ export default function Page() {
               q="21+Alpers+AvenueEpsom,+Auckland+1023,+New+Zealand"
             />
           </div>
-          <div className="flex">
+          <div className="flex justify-center">
             <Image
               src="/images/1.jpg"
               alt="box1" 
               width={500}
               height={500}
+              className="w-[500px] h-[500px] object-cover m-10"
             />
             <Image
               src="/images/2.jpg"
               alt="box1" 
               width={500}
               height={500}
+              className="w-[500px] h-[500px] object-cover m-10"
             />
           </div>
         </div>
