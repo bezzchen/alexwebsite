@@ -38,6 +38,9 @@ export default function Page() {
               q="21+Alpers+AvenueEpsom,+Auckland+1023,+New+Zealand"
             />
           </div>
+          <h1 className="pt-8 text-6xl">
+              DISCOVER OUR HOTEL
+          </h1>
           <div className="flex flex-wrap justify-center gap-30">
             <Link href="/facilities" className="group relative w-[500px] h-[500px] overflow-hidden rounded-4xl cursor-pointer">
               <Image
