@@ -1,6 +1,14 @@
+import Image from "next/image";
+
 export default function Reviews() {
     return (
       <main className="pt-16 text-center max-w-4xl mx-auto space-y-8">
+        <Image
+          src="/images/0.jpg"
+          alt="reviewhero"
+          width={1600}
+          height={800}
+        />
         <h1 className="text-6xl">
           Reviews
         </h1>
