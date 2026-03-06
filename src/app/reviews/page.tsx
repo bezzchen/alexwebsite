@@ -2,13 +2,15 @@ import Image from "next/image";
 
 export default function Reviews() {
     return (
-      <main className="pt-16 text-center max-w-4xl mx-auto space-y-8">
+      <main>
         <Image
           src="/images/0.jpg"
           alt="reviewhero"
           width={1600}
           height={800}
+          className="w-full object-cover h-[630px] mt-4"
         />
+        <div className="pt-16 text-center max-w-4xl mx-auto space-y-8">
         <h1 className="text-6xl">
           Reviews
         </h1>
@@ -113,7 +115,8 @@ Room 25 - Loved the place and the staff - Sydney Gustafen 6/10/12 <br /><br />
 Room 3 - Perfect for a business stay - Double glazed windows ensured absolute quietness, spotless clean - C.Hickey 7/8/12 <br /><br />
 
 Room 6 - Next time I need to stay at a motel in New market I will stay at Alexander Inn. It had everything I required and is close to the shops only walking distance away. I also liked the style of the room and felt warm and comfortable, the pillows and bed were amazing. I will be recommending Alexander Inn to colleagues, friends and family. Kellie Hodgson 1 & 2/7/12
-        </p>
+          </p>
+        </div>
       </main>
     );
   }
