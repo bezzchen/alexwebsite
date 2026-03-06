@@ -1,5 +1,6 @@
 import Image from "next/image";
 import "./globals.css";
+import Link from "next/link"
 import { GoogleMapsEmbed } from '@next/third-parties/google';
 
 export default function Page() {
@@ -37,21 +38,33 @@ export default function Page() {
               q="21+Alpers+AvenueEpsom,+Auckland+1023,+New+Zealand"
             />
           </div>
-          <div className="flex justify-center">
-            <Image
-              src="/images/1.jpg"
-              alt="box1" 
-              width={500}
-              height={500}
-              className="w-[500px] h-[500px] object-cover m-10"
-            />
-            <Image
-              src="/images/2.jpg"
-              alt="box1" 
-              width={500}
-              height={500}
-              className="w-[500px] h-[500px] object-cover m-10"
-            />
+          <div className="flex flex-wrap justify-center gap-30">
+            <Link href="/facilities" className="group relative w-[500px] h-[500px] overflow-hidden rounded-4xl cursor-pointer">
+              <Image
+                src="/images/1.jpg"
+                alt="box1" 
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-110" 
+              />
+              <div className="absolute inset-0 bg-black/20 transition-colors duration-300 group-hover:bg-black/60" />
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
+                <h3 className="text-3xl font-bold">OUR FACILITIES</h3>
+                <p className="opacity-0 translate-y-4 transtition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">MORE INFO</p>
+              </div>
+            </Link>
+            <Link href="/rooms" className="group relative w-[500px] h-[500px] overflow-hidden rounded-4xl cursor-pointer">
+              <Image
+                src="/images/2.jpg"
+                alt="box1" 
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-110" 
+              />
+              <div className="absolute inset-0 bg-black/20 transition-colors duration-300 group-hover:bg-black/60" />
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
+                <h3 className="text-3xl font-bold">OUR ROOMS</h3>
+                <p className="opacity-0 translate-y-4 transtition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">MORE INFO</p>
+              </div>
+            </Link>
           </div>
         </div>
       </main>
