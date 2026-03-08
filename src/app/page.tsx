@@ -29,15 +29,6 @@ export default function Page() {
             Remuera, Epsom, Sky City Casino, Vector Arena, The Museum and Domain, Alexandra Park Raceway, Public Hospitals and Parnell Art Galleries are all a five-minute drive. We are en-route and only 13km from the Auckland International Airport.
             </p>
           </div>
-          <div className="max-w-6xl w-full h-[450px] mx-auto rounded-4xl overflow-hidden shadow-lg">
-            <GoogleMapsEmbed 
-              apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}
-              height={450}
-              width="100%"
-              mode="place"
-              q="21+Alpers+AvenueEpsom,+Auckland+1023,+New+Zealand"
-            />
-          </div>
           <h1 className="pt-8 text-6xl">
               DISCOVER OUR HOTEL
           </h1>
@@ -68,6 +59,21 @@ export default function Page() {
                 <p className="opacity-0 translate-y-4 transtition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">MORE INFO</p>
               </div>
             </Link>
+          </div>
+          <h1 className="text-6xl">
+            FIND US
+          </h1>
+          <h2 className="text-4xl">
+            Explore Auckland
+          </h2>
+          <div className="max-w-6xl w-full h-[450px] mx-auto rounded-4xl overflow-hidden shadow-lg">
+            <GoogleMapsEmbed 
+              apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}
+              height={450}
+              width="100%"
+              mode="place"
+              q="21+Alpers+AvenueEpsom,+Auckland+1023,+New+Zealand"
+            />
           </div>
         </div>
       </main>
