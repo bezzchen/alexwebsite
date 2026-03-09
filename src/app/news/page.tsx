@@ -8,11 +8,13 @@ export default function News() {
           alt="newshero"
           width={1600}
           height={800}
-          className="w-full object-cover h-[640px]"
+          className="w-full object-cover h-[660px]"
         />
-        <h1 className="text-4xl">
-          NEWS
-        </h1>
+        <div className="pt-8 text-center max-w-4xl mx-auto space-y-8">
+          <h1 className="text-6xl">
+            NEWS
+          </h1>
+        </div>
       </main>
     );
   }

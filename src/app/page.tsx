@@ -60,12 +60,17 @@ export default function Page() {
               </div>
             </Link>
           </div>
-          <h1 className="text-6xl">
-            FIND US
-          </h1>
-          <h2 className="text-4xl">
-            Explore Auckland
-          </h2>
+          <div>
+            <h1 className="text-6xl">
+              FIND US
+            </h1>
+            <h2 className="text-2xl pt-2 pb-4">
+              Discover all the amazing attractions, services, and destinations near our hotel
+            </h2>
+            <Link href="/location" className="rounded-2xl bg-black text-white px-2 py-2">
+              Explore Auckland
+            </Link>
+          </div>
           <div className="max-w-6xl w-full h-[450px] mx-auto rounded-4xl overflow-hidden shadow-lg">
             <GoogleMapsEmbed 
               apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}
