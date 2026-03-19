@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function News() {
     return (
-      <main className="pt-4">
+      <main className="pt-4 bg-white">
         <Image
           src="/images/0.jpg"
           alt="newshero"
