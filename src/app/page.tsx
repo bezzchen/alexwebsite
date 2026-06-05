@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { BookingPanel } from "@/src/components/BookingPanel";
 import { ButtonLink } from "@/src/components/ButtonLink";
 import { MapFrame } from "@/src/components/MapFrame";
 import { PageHero } from "@/src/components/PageHero";
@@ -24,12 +23,10 @@ export default function Page() {
         image="/images/0.jpg"
         imageAlt="Alexander Inn exterior"
         priority
-      >
-        <BookingPanel />
-      </PageHero>
+      />
 
       <section className="mx-auto grid max-w-7xl gap-12 px-5 py-20 md:grid-cols-[0.95fr_1.05fr] md:items-center md:px-8">
-        <div className="relative min-h-[460px] overflow-hidden bg-black">
+        <div className="ui-box relative min-h-[460px] bg-black">
           <Image
             src="/images/1.jpg"
             alt="Alexander Inn guest area"
@@ -54,7 +51,7 @@ export default function Page() {
               ["13 km", "to Auckland International Airport"],
               ["24/7", "free Wi-Fi Broadband"],
             ].map(([value, label]) => (
-              <div key={value} className="border-l-2 border-[var(--gold)] bg-white p-4">
+              <div key={value} className="ui-box-soft border-l-2 border-[var(--gold)] bg-white p-4">
                 <p className="text-3xl font-semibold">{value}</p>
                 <p className="mt-1 text-sm text-black/60">{label}</p>
               </div>
@@ -76,7 +73,7 @@ export default function Page() {
               <Link
                 key={card.href}
                 href={card.href}
-                className="group relative min-h-[420px] overflow-hidden bg-black text-white"
+                className="ui-box group relative min-h-[420px] bg-black text-white"
               >
                 <Image
                   src={card.image}
@@ -111,7 +108,7 @@ export default function Page() {
           />
           <div className="grid gap-5 sm:grid-cols-2">
             {roomTypes.map((room) => (
-              <article key={room.name} className="bg-white">
+              <article key={room.name} className="ui-box bg-white">
                 <div className="relative h-56 overflow-hidden bg-black">
                   <Image
                     src={room.image}
@@ -170,7 +167,7 @@ export default function Page() {
         </div>
         <div className="mt-10 grid gap-5 md:grid-cols-3">
           {reviews.slice(0, 3).map((review) => (
-            <article key={review.meta} className="bg-white p-6">
+            <article key={review.meta} className="ui-box bg-white p-6">
               <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--gold-dark)]">
                 {review.meta}
               </p>

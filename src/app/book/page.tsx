@@ -1,4 +1,3 @@
-import { BookingPanel } from "@/src/components/BookingPanel";
 import { ButtonLink } from "@/src/components/ButtonLink";
 import { PageHero } from "@/src/components/PageHero";
 import { SectionIntro } from "@/src/components/SectionIntro";
@@ -14,9 +13,7 @@ export default function Book() {
         body="Use the stay details below, then contact reception for direct booking support, arrival questions, and parking availability."
         image="/images/2.jpg"
         imageAlt="Alexander Inn room"
-      >
-        <BookingPanel compact />
-      </PageHero>
+      />
 
       <section className="mx-auto grid max-w-7xl gap-10 px-5 py-20 lg:grid-cols-[0.9fr_1.1fr] md:px-8">
         <div>
@@ -28,7 +25,7 @@ export default function Book() {
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             <a
               href={`tel:${contactDetails.freephone.replaceAll(" ", "")}`}
-              className="bg-white p-6 transition hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(0,0,0,0.12)]"
+              className="ui-box bg-white p-6 transition hover:-translate-y-1"
             >
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--gold-dark)]">
                 Freephone NZ
@@ -37,7 +34,7 @@ export default function Book() {
             </a>
             <a
               href={`tel:${contactDetails.international.replaceAll(" ", "")}`}
-              className="bg-white p-6 transition hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(0,0,0,0.12)]"
+              className="ui-box bg-white p-6 transition hover:-translate-y-1"
             >
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--gold-dark)]">
                 International
@@ -56,7 +53,7 @@ export default function Book() {
         </div>
 
         <div className="grid gap-5">
-          <section className="bg-white p-6 md:p-8">
+          <section className="ui-box bg-white p-6 md:p-8">
             <h2 className="text-2xl font-semibold">Arrival details</h2>
             <ul className="mt-6 grid gap-3">
               {facilities.checkIn.map((item) => (
@@ -67,7 +64,7 @@ export default function Book() {
               ))}
             </ul>
           </section>
-          <section className="bg-white p-6 md:p-8">
+          <section className="ui-box bg-white p-6 md:p-8">
             <h2 className="text-2xl font-semibold">Office hours</h2>
             <ul className="mt-6 grid gap-3">
               {officeHours.map((item) => (
@@ -78,7 +75,7 @@ export default function Book() {
               ))}
             </ul>
           </section>
-          <section className="bg-black p-6 text-white md:p-8">
+          <section className="ui-box bg-black p-6 text-white md:p-8">
             <h2 className="text-2xl font-semibold">Hotel alert</h2>
             <div className="mt-5 space-y-3 text-sm leading-6 text-white/70">
               {hotelAlert.map((item) => (

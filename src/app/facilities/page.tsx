@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { BookingPanel } from "@/src/components/BookingPanel";
 import { ButtonLink } from "@/src/components/ButtonLink";
 import { PageHero } from "@/src/components/PageHero";
 import { SectionIntro } from "@/src/components/SectionIntro";
@@ -22,9 +21,7 @@ export default function Facilities() {
         body="Free Wi-Fi, central Auckland access, serviced rooms, secure entry, reception support, and practical guest extras."
         image="/images/0.jpg"
         imageAlt="Alexander Inn exterior"
-      >
-        <BookingPanel compact />
-      </PageHero>
+      />
 
       <section className="mx-auto grid max-w-7xl gap-12 px-5 py-20 lg:grid-cols-[0.9fr_1.1fr] lg:items-start md:px-8">
         <div className="lg:sticky lg:top-36">
@@ -42,7 +39,7 @@ export default function Facilities() {
 
         <div className="grid gap-6">
           {groups.map((group) => (
-            <section key={group.title} className="bg-white p-6 md:p-8">
+            <section key={group.title} className="ui-box bg-white p-6 md:p-8">
               <h2 className="text-2xl font-semibold">{group.title}</h2>
               <ul className="mt-6 grid gap-3 sm:grid-cols-2">
                 {group.items.map((item) => (
@@ -59,7 +56,7 @@ export default function Facilities() {
 
       <section className="bg-white py-20">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 md:grid-cols-2 md:items-center md:px-8">
-          <div className="relative min-h-[420px] overflow-hidden bg-black">
+          <div className="ui-box relative min-h-[420px] bg-black">
             <Image
               src="/images/1.jpg"
               alt="Alexander Inn facilities"
@@ -76,7 +73,7 @@ export default function Facilities() {
             />
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               {["Free Wi-Fi Broadband 24/7", "Daily room servicing", "Central Auckland access", "Onsite parking subject to availability"].map((item) => (
-                <div key={item} className="border-l-2 border-[var(--gold)] bg-[var(--page-bg)] p-4 text-sm font-medium">
+                <div key={item} className="ui-box-soft border-l-2 border-[var(--gold)] bg-[var(--page-bg)] p-4 text-sm font-medium">
                   {item}
                 </div>
               ))}

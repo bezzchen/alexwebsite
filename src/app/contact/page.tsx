@@ -1,4 +1,3 @@
-import { BookingPanel } from "@/src/components/BookingPanel";
 import { ButtonLink } from "@/src/components/ButtonLink";
 import { MapFrame } from "@/src/components/MapFrame";
 import { PageHero } from "@/src/components/PageHero";
@@ -15,9 +14,7 @@ export default function Contact() {
         body="Contact the hotel for room availability, parking questions, after-hours arrival details, and local Newmarket advice."
         image="/images/1.jpg"
         imageAlt="Alexander Inn guest arrival area"
-      >
-        <BookingPanel compact />
-      </PageHero>
+      />
 
       <section className="mx-auto grid max-w-7xl gap-10 px-5 py-20 lg:grid-cols-[0.9fr_1.1fr] md:px-8">
         <div>
@@ -27,7 +24,7 @@ export default function Contact() {
             body="Direct phone contact is best for urgent arrival details, parking availability, and same-day accommodation questions."
           />
           <div className="mt-8 grid gap-4">
-            <div className="bg-white p-6">
+            <div className="ui-box bg-white p-6">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--gold-dark)]">
                 Address
               </p>
@@ -36,7 +33,7 @@ export default function Contact() {
             <div className="grid gap-4 sm:grid-cols-2">
               <a
                 href={`tel:${contactDetails.freephone.replaceAll(" ", "")}`}
-                className="bg-white p-6 transition hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(0,0,0,0.12)]"
+                className="ui-box bg-white p-6 transition hover:-translate-y-1"
               >
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--gold-dark)]">
                   Freephone NZ
@@ -45,7 +42,7 @@ export default function Contact() {
               </a>
               <a
                 href={`tel:${contactDetails.international.replaceAll(" ", "")}`}
-                className="bg-white p-6 transition hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(0,0,0,0.12)]"
+                className="ui-box bg-white p-6 transition hover:-translate-y-1"
               >
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--gold-dark)]">
                   International
@@ -56,7 +53,7 @@ export default function Contact() {
           </div>
         </div>
 
-        <form className="bg-white p-6 md:p-8">
+        <form className="ui-box bg-white p-6 md:p-8">
           <h2 className="text-3xl font-semibold">Send an enquiry</h2>
           <div className="mt-8 grid gap-5 sm:grid-cols-2">
             <label className="grid gap-2 text-sm font-medium">
@@ -99,12 +96,12 @@ export default function Contact() {
             <SectionIntro eyebrow="Office hours" title="Reception availability." />
             <ul className="mt-7 grid gap-4">
               {officeHours.map((item) => (
-                <li key={item} className="border-l-2 border-[var(--gold)] bg-[var(--page-bg)] p-5 text-sm font-medium">
+                <li key={item} className="ui-box-soft border-l-2 border-[var(--gold)] bg-[var(--page-bg)] p-5 text-sm font-medium">
                   {item}
                 </li>
               ))}
             </ul>
-            <div className="mt-8 bg-black p-6 text-white">
+            <div className="ui-box mt-8 bg-black p-6 text-white">
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--gold)]">
                 Hotel alert
               </p>

@@ -39,6 +39,25 @@ textarea {
   outline-color: var(--gold-dark);
 }
 
+input,
+select,
+textarea {
+  border-radius: 0.625rem;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+}
+
 img {
   max-width: 100%;
+}
+
+.ui-box {
+  border-radius: 0.875rem;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+}
+
+.ui-box-soft {
+  border-radius: 0.875rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
 }

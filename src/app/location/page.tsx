@@ -1,4 +1,3 @@
-import { BookingPanel } from "@/src/components/BookingPanel";
 import { ButtonLink } from "@/src/components/ButtonLink";
 import { MapFrame } from "@/src/components/MapFrame";
 import { PageHero } from "@/src/components/PageHero";
@@ -20,9 +19,7 @@ export default function Location() {
         body="Alexander Inn is conveniently situated at 21 Alpers Avenue, Newmarket, Auckland Central, New Zealand."
         image="/images/0.jpg"
         imageAlt="Alexander Inn exterior in Newmarket"
-      >
-        <BookingPanel compact />
-      </PageHero>
+      />
 
       <section className="mx-auto grid max-w-7xl gap-10 px-5 py-20 lg:grid-cols-[0.9fr_1.1fr] lg:items-start md:px-8">
         <div>
@@ -35,7 +32,7 @@ export default function Location() {
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
-          <p className="mt-6 border-l-2 border-[var(--gold)] bg-white p-5 text-sm leading-6 text-black/68">
+          <p className="ui-box-soft mt-6 border-l-2 border-[var(--gold)] bg-white p-5 text-sm leading-6 text-black/68">
             {contactDetails.address}
           </p>
           <div className="mt-8">
@@ -56,7 +53,7 @@ export default function Location() {
           />
           <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {locationQuickFacts.map((fact) => (
-              <div key={fact} className="border-l-2 border-[var(--gold)] bg-[var(--page-bg)] p-5 text-sm font-medium leading-6">
+              <div key={fact} className="ui-box-soft border-l-2 border-[var(--gold)] bg-[var(--page-bg)] p-5 text-sm font-medium leading-6">
                 {fact}
               </div>
             ))}
@@ -73,7 +70,7 @@ export default function Location() {
           />
           <div className="grid gap-5">
             {transportDirections.map((section) => (
-              <article key={section.title} className="bg-white p-6 md:p-8">
+              <article key={section.title} className="ui-box bg-white p-6 md:p-8">
                 <h2 className="text-2xl font-semibold">{section.title}</h2>
                 <div className="mt-5 space-y-4 text-sm leading-7 text-black/68">
                   {section.body.map((paragraph) => (

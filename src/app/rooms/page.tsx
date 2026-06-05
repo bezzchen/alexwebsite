@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { BookingPanel } from "@/src/components/BookingPanel";
 import { ButtonLink } from "@/src/components/ButtonLink";
 import { PageHero } from "@/src/components/PageHero";
 import { SectionIntro } from "@/src/components/SectionIntro";
@@ -15,9 +14,7 @@ export default function Rooms() {
         body="Choose upmarket rooms or self-contained suites close to Newmarket shopping, dining, hospitals, transport, and central Auckland."
         image="/images/2.jpg"
         imageAlt="Alexander Inn guest room"
-      >
-        <BookingPanel compact />
-      </PageHero>
+      />
 
       <section className="mx-auto max-w-7xl px-5 py-20 md:px-8">
         <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
@@ -28,7 +25,7 @@ export default function Rooms() {
           />
           <div className="grid gap-5 sm:grid-cols-3">
             {["Double glazing", "Marble tiled bathrooms", "Balconies and sun seats"].map((item) => (
-              <div key={item} className="border-l-2 border-[var(--gold)] bg-white p-5">
+              <div key={item} className="ui-box-soft border-l-2 border-[var(--gold)] bg-white p-5">
                 <p className="text-lg font-semibold">{item}</p>
               </div>
             ))}
@@ -45,7 +42,7 @@ export default function Rooms() {
           />
           <div className="mt-12 grid gap-7 md:grid-cols-2">
             {roomTypes.map((room) => (
-              <article key={room.name} className="grid overflow-hidden border border-black/10 bg-[var(--paper)] lg:grid-cols-[0.95fr_1.05fr]">
+              <article key={room.name} className="ui-box grid border border-black/10 bg-[var(--paper)] lg:grid-cols-[0.95fr_1.05fr]">
                 <div className="relative min-h-[280px] bg-black">
                   <Image
                     src={room.image}
@@ -81,7 +78,7 @@ export default function Rooms() {
       </section>
 
       <section className="mx-auto grid max-w-7xl gap-10 px-5 py-20 md:grid-cols-[1.1fr_0.9fr] md:items-center md:px-8">
-        <div className="relative min-h-[420px] overflow-hidden bg-black">
+        <div className="ui-box relative min-h-[420px] bg-black">
           <Image
             src="/images/3.jpg"
             alt="Alexander Inn suite interior"

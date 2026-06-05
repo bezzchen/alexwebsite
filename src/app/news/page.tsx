@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { BookingPanel } from "@/src/components/BookingPanel";
 import { ButtonLink } from "@/src/components/ButtonLink";
 import { PageHero } from "@/src/components/PageHero";
 import { SectionIntro } from "@/src/components/SectionIntro";
@@ -15,9 +14,7 @@ export default function News() {
         body="Plan around the parts of the stay guests ask about most: location, room comfort, parking, reception hours, and transport."
         image="/images/0.jpg"
         imageAlt="Alexander Inn exterior"
-      >
-        <BookingPanel compact />
-      </PageHero>
+      />
 
       <section className="mx-auto max-w-7xl px-5 py-20 md:px-8">
         <SectionIntro
@@ -28,7 +25,7 @@ export default function News() {
         />
         <div className="mt-12 grid gap-7 md:grid-cols-3">
           {newsItems.map((item) => (
-            <article key={item.title} className="bg-white">
+            <article key={item.title} className="ui-box bg-white">
               <div className="relative h-64 overflow-hidden bg-black">
                 <Image
                   src={item.image}
