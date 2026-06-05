@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ButtonLink } from "./ButtonLink";
+import { MobileMenu } from "./MobileMenu";
 import { navItems } from "@/src/lib/site";
 
 export default function Header() {
@@ -38,28 +39,13 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <ButtonLink href="/book" variant="secondary">
             Book
           </ButtonLink>
         </div>
-      </div>
 
-      <div className="border-t border-black/10 lg:hidden">
-        <nav className="mx-auto flex max-w-7xl gap-6 overflow-x-auto px-5 py-3 text-xs font-semibold uppercase tracking-[0.12em] md:px-8">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="shrink-0 text-black/68 transition hover:text-black"
-            >
-              {item.label}
-            </Link>
-          ))}
-          <Link href="/book" className="shrink-0 text-[var(--gold-dark)]">
-            Book
-          </Link>
-        </nav>
+        <MobileMenu items={navItems} />
       </div>
     </header>
   );
