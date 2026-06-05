@@ -1,18 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ButtonLink } from "./ButtonLink";
-import { contactDetails, navItems } from "@/src/lib/site";
+import { navItems } from "@/src/lib/site";
 
 export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-black/10 bg-white/95 backdrop-blur">
-      <div className="bg-black px-4 py-2 text-xs font-medium uppercase tracking-[0.12em] text-white">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-x-3 gap-y-1 sm:flex-row">
-          <span className="text-[var(--gold)]">Newmarket Auckland</span>
-          <span className="hidden text-white/35 sm:inline">|</span>
-          <span>Freephone {contactDetails.freephone}</span>
-        </div>
-      </div>
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-5 px-5 py-3 md:px-8">
         <Link href="/" className="flex min-w-0 items-center gap-3">
           <Image
