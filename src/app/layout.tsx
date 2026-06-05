@@ -1,12 +1,13 @@
 import "./globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { Inter } from "next/font/google";
+import type { Metadata } from "next";
 
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-})
+export const metadata: Metadata = {
+  title: "Alexander Inn | Newmarket Auckland Accommodation",
+  description:
+    "Quiet upmarket rooms and suites in the heart of Newmarket, Auckland.",
+};
 
 export default function RootLayout({
   children,
@@ -14,12 +15,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.variable}>
-      <body className="flex flex-col min-h-screen bg-white text-black">
+    <html lang="en">
+      <body className="flex min-h-screen flex-col bg-[var(--page-bg)] text-black antialiased">
         <Header />
-        <main className="pt-14">
-          {children}
-        </main>
+        {children}
         <Footer />
       </body>
     </html>

@@ -1,77 +1,90 @@
-import { GoogleMapsEmbed } from "@next/third-parties/google" 
+import { BookingPanel } from "@/src/components/BookingPanel";
+import { ButtonLink } from "@/src/components/ButtonLink";
+import { MapFrame } from "@/src/components/MapFrame";
+import { PageHero } from "@/src/components/PageHero";
+import { SectionIntro } from "@/src/components/SectionIntro";
+import {
+  contactDetails,
+  locationIntro,
+  locationQuickFacts,
+  transportDirections,
+} from "@/src/lib/site";
+
 export default function Location() {
-    return (
-      <main className="pt-4">
-        <div className="w-full h-[600px] mx-auto overflow-hidden shadow-lg">
-          <GoogleMapsEmbed 
-            apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}
-            height={600}
-            width="100%"
-            mode="place"
-            q="21+Alpers+AvenueEpsom,+Auckland+1023,+New+Zealand"
+  return (
+    <main>
+      <PageHero
+        eyebrow="Newmarket location"
+        title="Close and convenient."
+        subtitle="A practical Auckland base."
+        body="Alexander Inn is conveniently situated at 21 Alpers Avenue, Newmarket, Auckland Central, New Zealand."
+        image="/images/0.jpg"
+        imageAlt="Alexander Inn exterior in Newmarket"
+      >
+        <BookingPanel compact />
+      </PageHero>
+
+      <section className="mx-auto grid max-w-7xl gap-10 px-5 py-20 lg:grid-cols-[0.9fr_1.1fr] lg:items-start md:px-8">
+        <div>
+          <SectionIntro
+            eyebrow="Find us"
+            title="21 Alpers Avenue, Newmarket."
           />
-        </div>
-        <div className="flex flex-col text-center gap-y-8 max-w-4xl mx-auto">
-          <h1 className="pt-8 text-6xl">
-              NEWMARKET LOCATION
-          </h1>
-          <h2 className="text-3xl text-yellow-500">
-            Close and convenient
-          </h2>
-          <h2 className="text-3xl">
-            Newmarket Accommodation
-          </h2>
-          <div>
-            Alexander Inn is conveniently situated at 21 Alpers Avenue, Newmarket, Auckland Central, New Zealand. Read on for the directions to reach our accommodation by various means of transport. <br /> <br />
-
-            When driving, please note that Alpers Avenue is a one-way street, and is: <br /><br />
-
-            - 1 minute drive from the main arterial route to State Highway 1 and central Auckland City <br />
-            - 15 minutes' drive to the central city <br />
-            - Enroute to the airport (30 mins drive) <br />
-            - 10 minutes' walk to the train station in Newmarket <br />
-            - 10 minutes' walk to Auckland’s fashion capital, restaurants, cafes and cinemas <br />
-            - 5 min walk to the city link bus system
+          <div className="mt-6 space-y-4 text-base leading-8 text-black/68">
+            {locationIntro.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
           </div>
-          <h2 className="text-3xl">
-            By Car
-          </h2>
-          <div>
-            Quality Suites Alexander Inn is at 21 Alpers Avenue, Newmarket. It is a one-way street, so you will have to enter from the Broadway (southern end) of the road or Manukau Road or Great South Road and we are on the right-hand side of the street. <br /><br />
-
-            From State Highway 1 (Motorway) Heading North <br />
-            Exit the motorway at the Market Road <br />
-            Turn left at the top of the off ramp following the Epsom sign to traffic lights (100 metres) <br />
-            Turn right into Great South Road <br />
-            Drive down Great South Road to the next major intersection with lights (about 1km) and drive straight through the lights (with Honda Cars on your right-hand side) and you are now in Alpers Avenue. <br />
-            The motel is on the right-hand side of the street, and we have a red coloured sign. <br />
-            From State Highway 1 (Motorway) Heading South <br />
-            Exit the motorway at Gillies Avenue <br />
-            Turn left at bottom of off ramp, and then very first right-hand road into Mortimers Pass <br />
-            At the traffic lights at the bottom of Mortimers Pass turn right into Broadway. <br />
-            Drive approx 200m. <br />
-            Turn right at the traffic lights (Honda should be on your right) into Alpers Avenue <br />
-            The motel is on the right-hand side of the street, and we have a red colored sign. <br />
-          </div>
-          <h2 className="text-3xl">
-            By Train
-          </h2>
-          <div>
-            We are 10-minute walk to the Newmarket train station.
-          </div>
-          <h2 className="text-3xl">
-            By Bus
-          </h2>
-          <div>
-            Walk 10 minutes to the Westfield Mall from the motel and you are on the main central city bus loop with leaves every 10 minutes.
-            </div>
-          <h2 className="text-3xl">
-            By Taxi
-          </h2>
-          <div>
-            We are 15-30 minutes from the airport by taxi and about 15 minutes from the city.
+          <p className="mt-6 border-l-2 border-[var(--gold)] bg-white p-5 text-sm leading-6 text-black/68">
+            {contactDetails.address}
+          </p>
+          <div className="mt-8">
+            <ButtonLink href="/contact" variant="ghost">
+              Contact Reception
+            </ButtonLink>
           </div>
         </div>
-      </main>
-    );
-  }
+        <MapFrame height={560} />
+      </section>
+
+      <section className="bg-white py-20">
+        <div className="mx-auto max-w-7xl px-5 md:px-8">
+          <SectionIntro
+            eyebrow="Nearby"
+            title="Minutes from shopping, transport, hospitals, and central Auckland."
+            align="center"
+          />
+          <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {locationQuickFacts.map((fact) => (
+              <div key={fact} className="border-l-2 border-[var(--gold)] bg-[var(--page-bg)] p-5 text-sm font-medium leading-6">
+                {fact}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 py-20 md:px-8">
+        <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+          <SectionIntro
+            eyebrow="Directions"
+            title="Arrive by car, train, bus, or taxi."
+            body="Alpers Avenue is a one-way street, so driving directions depend on whether you are travelling north or south on State Highway 1."
+          />
+          <div className="grid gap-5">
+            {transportDirections.map((section) => (
+              <article key={section.title} className="bg-white p-6 md:p-8">
+                <h2 className="text-2xl font-semibold">{section.title}</h2>
+                <div className="mt-5 space-y-4 text-sm leading-7 text-black/68">
+                  {section.body.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}

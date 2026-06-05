@@ -1,86 +1,184 @@
 import Image from "next/image";
-import "./globals.css";
-import Link from "next/link"
-import { GoogleMapsEmbed } from '@next/third-parties/google';
+import Link from "next/link";
+import { BookingPanel } from "@/src/components/BookingPanel";
+import { ButtonLink } from "@/src/components/ButtonLink";
+import { MapFrame } from "@/src/components/MapFrame";
+import { PageHero } from "@/src/components/PageHero";
+import { SectionIntro } from "@/src/components/SectionIntro";
+import {
+  discoverCards,
+  homeHighlights,
+  homeIntro,
+  reviews,
+  roomTypes,
+} from "@/src/lib/site";
 
 export default function Page() {
-    return (
-      <main className="text-center">
-        <Image 
-          src="/images/0.jpg"
-          alt="Hero photo"
-          width={1600}
-          height={900}
-          className="w-full h-[690px] object-cover"
-        />
-        <div className="flex flex-col gap-y-24">
-          <div className="flex flex-col gap-y-4">
-            <h1 className="pt-8 text-6xl">
-              ALEXANDER INN
-            </h1>
-            <h2 className="text-3xl text-yellow-500">
-              IN THE HEART OF NEWMARKET
-            </h2>
-            <p className="max-w-2xl mx-auto text-lg">
-            Our upmarket rooms and suites located at Newmarket offer high quality modern décor and luxury beds.
+  return (
+    <main>
+      <PageHero
+        eyebrow="Newmarket Auckland accommodation"
+        title="ALEXANDER INN"
+        subtitle="IN THE HEART OF NEWMARKET"
+        body="Quiet upmarket rooms and suites, a four-minute flat walk from Newmarket shopping, cafes, restaurants, and transport."
+        image="/images/0.jpg"
+        imageAlt="Alexander Inn exterior"
+        priority
+      >
+        <BookingPanel />
+      </PageHero>
 
-            We have quiet rooms with double glazing, marble tiled bathrooms, balconies and sun seats to relax on… a quiet night's sleep… and yet… only a four-minute flat walk from your accommodation to the bustling fashion and shopping capital of Newmarket, Auckland and the many chic cafes and restaurants, just a stroll away.
-
-            Remuera, Epsom, Sky City Casino, Vector Arena, The Museum and Domain, Alexandra Park Raceway, Public Hospitals and Parnell Art Galleries are all a five-minute drive. We are en-route and only 13km from the Auckland International Airport.
-            </p>
+      <section className="mx-auto grid max-w-7xl gap-12 px-5 py-20 md:grid-cols-[0.95fr_1.05fr] md:items-center md:px-8">
+        <div className="relative min-h-[460px] overflow-hidden bg-black">
+          <Image
+            src="/images/1.jpg"
+            alt="Alexander Inn guest area"
+            fill
+            sizes="(min-width: 768px) 46vw, 100vw"
+            className="object-cover"
+          />
+        </div>
+        <div>
+          <SectionIntro
+            eyebrow="Welcome"
+            title="Modern comfort within minutes of central Auckland."
+          />
+          <div className="mt-7 space-y-5 text-base leading-8 text-black/68">
+            {homeIntro.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
           </div>
-          <h1 className="pt-8 text-6xl">
-              DISCOVER OUR HOTEL
-          </h1>
-          <div className="flex flex-wrap justify-center gap-30">
-            <Link href="/facilities" className="group relative w-[500px] h-[500px] overflow-hidden rounded-4xl cursor-pointer">
-              <Image
-                src="/images/1.jpg"
-                alt="box1" 
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-110" 
-              />
-              <div className="absolute inset-0 bg-black/20 transition-colors duration-300 group-hover:bg-black/60" />
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
-                <h3 className="text-3xl font-bold">OUR FACILITIES</h3>
-                <p className="opacity-0 translate-y-4 transtition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">MORE INFO</p>
+          <div className="mt-8 grid gap-3 sm:grid-cols-3">
+            {[
+              ["4 min", "flat walk to Newmarket"],
+              ["13 km", "to Auckland International Airport"],
+              ["24/7", "free Wi-Fi Broadband"],
+            ].map(([value, label]) => (
+              <div key={value} className="border-l-2 border-[var(--gold)] bg-white p-4">
+                <p className="text-3xl font-semibold">{value}</p>
+                <p className="mt-1 text-sm text-black/60">{label}</p>
               </div>
-            </Link>
-            <Link href="/rooms" className="group relative w-[500px] h-[500px] overflow-hidden rounded-4xl cursor-pointer">
-              <Image
-                src="/images/2.jpg"
-                alt="box1" 
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-110" 
-              />
-              <div className="absolute inset-0 bg-black/20 transition-colors duration-300 group-hover:bg-black/60" />
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
-                <h3 className="text-3xl font-bold">OUR ROOMS</h3>
-                <p className="opacity-0 translate-y-4 transtition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">MORE INFO</p>
-              </div>
-            </Link>
-          </div>
-          <div>
-            <h1 className="text-6xl">
-              FIND US
-            </h1>
-            <h2 className="text-2xl pt-2 pb-4">
-              Discover all the amazing attractions, services, and destinations near our hotel
-            </h2>
-            <Link href="/location" className="rounded-2xl bg-black text-white px-2 py-2">
-              Explore Auckland
-            </Link>
-          </div>
-          <div className="max-w-6xl w-full h-[450px] mx-auto rounded-4xl overflow-hidden shadow-lg">
-            <GoogleMapsEmbed 
-              apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}
-              height={450}
-              width="100%"
-              mode="place"
-              q="21+Alpers+AvenueEpsom,+Auckland+1023,+New+Zealand"
-            />
+            ))}
           </div>
         </div>
-      </main>
-    );
-  }
+      </section>
+
+      <section className="bg-white py-20">
+        <div className="mx-auto max-w-7xl px-5 md:px-8">
+          <SectionIntro
+            eyebrow="Discover our hotel"
+            title="Everything close, everything calm."
+            body="Start with the details that matter most: practical facilities, quiet rooms, easy transport, guest feedback, and direct ways to plan your stay."
+            align="center"
+          />
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
+            {discoverCards.map((card) => (
+              <Link
+                key={card.href}
+                href={card.href}
+                className="group relative min-h-[420px] overflow-hidden bg-black text-white"
+              >
+                <Image
+                  src={card.image}
+                  alt={card.title}
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover transition duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/82 via-black/35 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 p-7">
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--gold)]">
+                    Explore
+                  </p>
+                  <h3 className="mt-3 text-3xl font-semibold">{card.title}</h3>
+                  <p className="mt-3 max-w-lg text-sm leading-6 text-white/76">{card.text}</p>
+                  <p className="mt-5 text-sm font-semibold uppercase tracking-[0.12em]">
+                    More info
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 py-20 md:px-8">
+        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+          <SectionIntro
+            eyebrow="Stay with us"
+            title="Rooms and suites for quiet Auckland stays."
+            body="Explore modern rooms, self-contained suites, spa options, and accessible stays with the practical comforts guests mention most often."
+          />
+          <div className="grid gap-5 sm:grid-cols-2">
+            {roomTypes.map((room) => (
+              <article key={room.name} className="bg-white">
+                <div className="relative h-56 overflow-hidden bg-black">
+                  <Image
+                    src={room.image}
+                    alt={room.name}
+                    fill
+                    sizes="(min-width: 1024px) 25vw, 50vw"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-5">
+                  <h3 className="text-2xl font-semibold">{room.name}</h3>
+                  <p className="mt-3 text-sm leading-6 text-black/65">{room.description}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-black py-20 text-white">
+        <div className="mx-auto grid max-w-7xl gap-10 px-5 md:grid-cols-[0.9fr_1.1fr] md:items-center md:px-8">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--gold)]">
+              Find us
+            </p>
+            <h2 className="mt-3 text-4xl font-semibold leading-tight md:text-5xl">
+              A Newmarket base near the places guests need.
+            </h2>
+            <div className="mt-6 space-y-4 text-base leading-8 text-white/68">
+              {homeHighlights.map((item) => (
+                <div key={item.title}>
+                  <h3 className="font-semibold text-white">{item.title}</h3>
+                  <p>{item.text}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-8">
+              <ButtonLink href="/location" variant="secondary">
+                Explore Auckland
+              </ButtonLink>
+            </div>
+          </div>
+          <MapFrame height={460} />
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 py-20 md:px-8">
+        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <SectionIntro
+            eyebrow="What our guests say"
+            title="Clean, quiet, comfortable, and close."
+          />
+          <ButtonLink href="/reviews" variant="ghost">
+            Read Reviews
+          </ButtonLink>
+        </div>
+        <div className="mt-10 grid gap-5 md:grid-cols-3">
+          {reviews.slice(0, 3).map((review) => (
+            <article key={review.meta} className="bg-white p-6">
+              <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--gold-dark)]">
+                {review.meta}
+              </p>
+              <p className="mt-4 text-base leading-7 text-black/68">{review.quote}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+    </main>
+  );
+}

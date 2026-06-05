@@ -1,4 +1,44 @@
 @import "tailwindcss";
+
 @theme {
-    --font-sans: var(--font-inter);
+  --font-sans: Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --page-bg: #f7f3ea;
+  --paper: #fffdf8;
+  --gold: #d6a437;
+  --gold-dark: #a87918;
+  --ink-soft: rgba(0, 0, 0, 0.68);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--gold);
+  color: #000;
+}
+
+a,
+button,
+input,
+select,
+textarea {
+  outline-color: var(--gold-dark);
+}
+
+img {
+  max-width: 100%;
 }
