@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { AmenityIcon } from "@/src/components/AmenityIcon";
 import { ButtonLink } from "@/src/components/ButtonLink";
 import { PageHero } from "@/src/components/PageHero";
 import { SectionIntro } from "@/src/components/SectionIntro";
@@ -44,7 +45,7 @@ export default function Facilities() {
               <ul className="mt-6 grid gap-3 sm:grid-cols-2">
                 {group.items.map((item) => (
                   <li key={item} className="flex gap-3 text-sm leading-6 text-black/68">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-[var(--gold)]" />
+                    <AmenityIcon label={item} className="mt-0.5" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -73,8 +74,9 @@ export default function Facilities() {
             />
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               {["Free Wi-Fi Broadband 24/7", "Daily room servicing", "Central Auckland access", "Onsite parking subject to availability"].map((item) => (
-                <div key={item} className="ui-box-soft border-l-2 border-[var(--gold)] bg-[var(--page-bg)] p-4 text-sm font-medium">
-                  {item}
+                <div key={item} className="ui-box-soft flex items-center gap-3 border-l-2 border-[var(--gold)] bg-[var(--page-bg)] p-4 text-sm font-medium">
+                  <AmenityIcon label={item} />
+                  <span>{item}</span>
                 </div>
               ))}
             </div>

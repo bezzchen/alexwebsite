@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { AmenityIcon } from "./AmenityIcon";
 import {
   contactDetails,
   hotelAlert,
@@ -94,7 +95,10 @@ export default function Footer() {
           </h3>
           <ul className="mt-5 space-y-3 text-sm leading-6 text-white/68">
             {officeHours.map((item) => (
-              <li key={item}>{item}</li>
+              <li key={item} className="flex gap-3">
+                <AmenityIcon label={item} className="bg-white/12 text-[var(--gold)]" />
+                <span>{item}</span>
+              </li>
             ))}
           </ul>
 

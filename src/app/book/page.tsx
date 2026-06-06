@@ -1,3 +1,4 @@
+import { AmenityIcon } from "@/src/components/AmenityIcon";
 import { ButtonLink } from "@/src/components/ButtonLink";
 import { PageHero } from "@/src/components/PageHero";
 import { SectionIntro } from "@/src/components/SectionIntro";
@@ -27,19 +28,29 @@ export default function Book() {
               href={`tel:${contactDetails.freephone.replaceAll(" ", "")}`}
               className="ui-box bg-white p-6 transition hover:-translate-y-1"
             >
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--gold-dark)]">
-                Freephone NZ
-              </p>
-              <p className="mt-3 text-2xl font-semibold">{contactDetails.freephone}</p>
+              <div className="flex items-start gap-3">
+                <AmenityIcon label="Freephone NZ" />
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--gold-dark)]">
+                    Freephone NZ
+                  </p>
+                  <p className="mt-3 text-2xl font-semibold">{contactDetails.freephone}</p>
+                </div>
+              </div>
             </a>
             <a
               href={`tel:${contactDetails.international.replaceAll(" ", "")}`}
               className="ui-box bg-white p-6 transition hover:-translate-y-1"
             >
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--gold-dark)]">
-                International
-              </p>
-              <p className="mt-3 text-2xl font-semibold">{contactDetails.international}</p>
+              <div className="flex items-start gap-3">
+                <AmenityIcon label="International phone" />
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--gold-dark)]">
+                    International
+                  </p>
+                  <p className="mt-3 text-2xl font-semibold">{contactDetails.international}</p>
+                </div>
+              </div>
             </a>
           </div>
           <div className="mt-8 flex flex-wrap gap-3">
@@ -58,7 +69,7 @@ export default function Book() {
             <ul className="mt-6 grid gap-3">
               {facilities.checkIn.map((item) => (
                 <li key={item} className="flex gap-3 text-sm leading-6 text-black/68">
-                  <span className="mt-2 h-1.5 w-1.5 bg-[var(--gold)]" />
+                  <AmenityIcon label={item} className="mt-0.5" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -69,7 +80,7 @@ export default function Book() {
             <ul className="mt-6 grid gap-3">
               {officeHours.map((item) => (
                 <li key={item} className="flex gap-3 text-sm leading-6 text-black/68">
-                  <span className="mt-2 h-1.5 w-1.5 bg-[var(--gold)]" />
+                  <AmenityIcon label={item} className="mt-0.5" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -79,7 +90,10 @@ export default function Book() {
             <h2 className="text-2xl font-semibold">Hotel alert</h2>
             <div className="mt-5 space-y-3 text-sm leading-6 text-white/70">
               {hotelAlert.map((item) => (
-                <p key={item}>{item}</p>
+                <p key={item} className="flex gap-3">
+                  <AmenityIcon label={item} className="bg-white/12 text-[var(--gold)]" />
+                  <span>{item}</span>
+                </p>
               ))}
             </div>
           </section>

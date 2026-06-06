@@ -1,3 +1,4 @@
+import { AmenityIcon } from "@/src/components/AmenityIcon";
 import { ButtonLink } from "@/src/components/ButtonLink";
 import { MapFrame } from "@/src/components/MapFrame";
 import { PageHero } from "@/src/components/PageHero";
@@ -25,29 +26,44 @@ export default function Contact() {
           />
           <div className="mt-8 grid gap-4">
             <div className="ui-box bg-white p-6">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--gold-dark)]">
-                Address
-              </p>
-              <p className="mt-3 text-lg font-medium">{contactDetails.address}</p>
+              <div className="flex items-start gap-3">
+                <AmenityIcon label={contactDetails.address} />
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--gold-dark)]">
+                    Address
+                  </p>
+                  <p className="mt-3 text-lg font-medium">{contactDetails.address}</p>
+                </div>
+              </div>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
               <a
                 href={`tel:${contactDetails.freephone.replaceAll(" ", "")}`}
                 className="ui-box bg-white p-6 transition hover:-translate-y-1"
               >
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--gold-dark)]">
-                  Freephone NZ
-                </p>
-                <p className="mt-3 text-2xl font-semibold">{contactDetails.freephone}</p>
+                <div className="flex items-start gap-3">
+                  <AmenityIcon label="Freephone NZ" />
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--gold-dark)]">
+                      Freephone NZ
+                    </p>
+                    <p className="mt-3 text-2xl font-semibold">{contactDetails.freephone}</p>
+                  </div>
+                </div>
               </a>
               <a
                 href={`tel:${contactDetails.international.replaceAll(" ", "")}`}
                 className="ui-box bg-white p-6 transition hover:-translate-y-1"
               >
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--gold-dark)]">
-                  International
-                </p>
-                <p className="mt-3 text-2xl font-semibold">{contactDetails.international}</p>
+                <div className="flex items-start gap-3">
+                  <AmenityIcon label="International phone" />
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--gold-dark)]">
+                      International
+                    </p>
+                    <p className="mt-3 text-2xl font-semibold">{contactDetails.international}</p>
+                  </div>
+                </div>
               </a>
             </div>
           </div>
@@ -96,8 +112,9 @@ export default function Contact() {
             <SectionIntro eyebrow="Office hours" title="Reception availability." />
             <ul className="mt-7 grid gap-4">
               {officeHours.map((item) => (
-                <li key={item} className="ui-box-soft border-l-2 border-[var(--gold)] bg-[var(--page-bg)] p-5 text-sm font-medium">
-                  {item}
+                <li key={item} className="ui-box-soft flex items-center gap-3 border-l-2 border-[var(--gold)] bg-[var(--page-bg)] p-5 text-sm font-medium">
+                  <AmenityIcon label={item} />
+                  <span>{item}</span>
                 </li>
               ))}
             </ul>
@@ -107,7 +124,10 @@ export default function Contact() {
               </p>
               <div className="mt-4 space-y-3 text-sm leading-6 text-white/70">
                 {hotelAlert.map((item) => (
-                  <p key={item}>{item}</p>
+                  <p key={item} className="flex gap-3">
+                    <AmenityIcon label={item} className="bg-white/12 text-[var(--gold)]" />
+                    <span>{item}</span>
+                  </p>
                 ))}
               </div>
             </div>

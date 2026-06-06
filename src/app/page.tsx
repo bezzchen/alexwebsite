@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { AmenityIcon } from "@/src/components/AmenityIcon";
 import { ButtonLink } from "@/src/components/ButtonLink";
 import { MapFrame } from "@/src/components/MapFrame";
 import { PageHero } from "@/src/components/PageHero";
@@ -52,8 +53,13 @@ export default function Page() {
               ["24/7", "free Wi-Fi Broadband"],
             ].map(([value, label]) => (
               <div key={value} className="ui-box-soft border-l-2 border-[var(--gold)] bg-white p-4">
-                <p className="text-3xl font-semibold">{value}</p>
-                <p className="mt-1 text-sm text-black/60">{label}</p>
+                <div className="flex items-start gap-3">
+                  <AmenityIcon label={label} />
+                  <div>
+                    <p className="text-3xl font-semibold">{value}</p>
+                    <p className="mt-1 text-sm text-black/60">{label}</p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
@@ -140,7 +146,10 @@ export default function Page() {
             <div className="mt-6 space-y-4 text-base leading-8 text-white/68">
               {homeHighlights.map((item) => (
                 <div key={item.title}>
-                  <h3 className="font-semibold text-white">{item.title}</h3>
+                  <h3 className="flex items-center gap-3 font-semibold text-white">
+                    <AmenityIcon label={`${item.title} ${item.text}`} className="bg-white/12 text-[var(--gold)]" />
+                    <span>{item.title}</span>
+                  </h3>
                   <p>{item.text}</p>
                 </div>
               ))}

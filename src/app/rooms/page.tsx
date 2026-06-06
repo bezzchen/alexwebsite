@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { AmenityIcon } from "@/src/components/AmenityIcon";
 import { ButtonLink } from "@/src/components/ButtonLink";
 import { PageHero } from "@/src/components/PageHero";
 import { SectionIntro } from "@/src/components/SectionIntro";
@@ -25,7 +26,8 @@ export default function Rooms() {
           />
           <div className="grid gap-5 sm:grid-cols-3">
             {["Double glazing", "Marble tiled bathrooms", "Balconies and sun seats"].map((item) => (
-              <div key={item} className="ui-box-soft border-l-2 border-[var(--gold)] bg-white p-5">
+              <div key={item} className="ui-box-soft flex items-center gap-3 border-l-2 border-[var(--gold)] bg-white p-5">
+                <AmenityIcon label={item} />
                 <p className="text-lg font-semibold">{item}</p>
               </div>
             ))}
@@ -65,7 +67,7 @@ export default function Rooms() {
                   <ul className="mt-6 grid gap-2">
                     {room.features.map((feature) => (
                       <li key={feature} className="flex gap-3 text-sm text-black/68">
-                        <span className="mt-1.5 h-1.5 w-1.5 bg-[var(--gold)]" />
+                        <AmenityIcon label={feature} className="-mt-1" />
                         <span>{feature}</span>
                       </li>
                     ))}

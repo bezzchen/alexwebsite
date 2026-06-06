@@ -1,3 +1,4 @@
+import { AmenityIcon } from "@/src/components/AmenityIcon";
 import { ButtonLink } from "@/src/components/ButtonLink";
 import { MapFrame } from "@/src/components/MapFrame";
 import { PageHero } from "@/src/components/PageHero";
@@ -32,9 +33,10 @@ export default function Location() {
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
-          <p className="ui-box-soft mt-6 border-l-2 border-[var(--gold)] bg-white p-5 text-sm leading-6 text-black/68">
-            {contactDetails.address}
-          </p>
+          <div className="ui-box-soft mt-6 flex gap-3 border-l-2 border-[var(--gold)] bg-white p-5 text-sm leading-6 text-black/68">
+            <AmenityIcon label={contactDetails.address} />
+            <p>{contactDetails.address}</p>
+          </div>
           <div className="mt-8">
             <ButtonLink href="/contact" variant="ghost">
               Contact Reception
@@ -53,8 +55,9 @@ export default function Location() {
           />
           <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {locationQuickFacts.map((fact) => (
-              <div key={fact} className="ui-box-soft border-l-2 border-[var(--gold)] bg-[var(--page-bg)] p-5 text-sm font-medium leading-6">
-                {fact}
+              <div key={fact} className="ui-box-soft flex gap-3 border-l-2 border-[var(--gold)] bg-[var(--page-bg)] p-5 text-sm font-medium leading-6">
+                <AmenityIcon label={fact} />
+                <span>{fact}</span>
               </div>
             ))}
           </div>
@@ -71,7 +74,10 @@ export default function Location() {
           <div className="grid gap-5">
             {transportDirections.map((section) => (
               <article key={section.title} className="ui-box bg-white p-6 md:p-8">
-                <h2 className="text-2xl font-semibold">{section.title}</h2>
+                <h2 className="flex items-center gap-3 text-2xl font-semibold">
+                  <AmenityIcon label={section.title} />
+                  <span>{section.title}</span>
+                </h2>
                 <div className="mt-5 space-y-4 text-sm leading-7 text-black/68">
                   {section.body.map((paragraph) => (
                     <p key={paragraph}>{paragraph}</p>
