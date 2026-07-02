@@ -2,6 +2,9 @@ import { ButtonLink } from "@/src/components/ButtonLink";
 import { PageHero } from "@/src/components/PageHero";
 import { SectionIntro } from "@/src/components/SectionIntro";
 import { reviews } from "@/src/lib/site";
+import { createMetadata, seoPages } from "@/src/lib/seo";
+
+export const metadata = createMetadata(seoPages.reviews);
 
 export default function Reviews() {
   const featured = reviews.slice(0, 4);

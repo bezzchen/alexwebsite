@@ -9,6 +9,9 @@ import {
   locationQuickFacts,
   transportDirections,
 } from "@/src/lib/site";
+import { createMetadata, seoPages } from "@/src/lib/seo";
+
+export const metadata = createMetadata(seoPages.location);
 
 export default function Location() {
   return (

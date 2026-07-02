@@ -4,6 +4,9 @@ import { ButtonLink } from "@/src/components/ButtonLink";
 import { PageHero } from "@/src/components/PageHero";
 import { SectionIntro } from "@/src/components/SectionIntro";
 import { homeIntro, roomTypes } from "@/src/lib/site";
+import { createMetadata, seoPages } from "@/src/lib/seo";
+
+export const metadata = createMetadata(seoPages.rooms);
 
 export default function Rooms() {
   return (

@@ -4,6 +4,9 @@ import { MapFrame } from "@/src/components/MapFrame";
 import { PageHero } from "@/src/components/PageHero";
 import { SectionIntro } from "@/src/components/SectionIntro";
 import { contactDetails, hotelAlert, officeHours } from "@/src/lib/site";
+import { createMetadata, seoPages } from "@/src/lib/seo";
+
+export const metadata = createMetadata(seoPages.contact);
 
 export default function Contact() {
   return (

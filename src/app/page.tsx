@@ -12,6 +12,9 @@ import {
   reviews,
   roomTypes,
 } from "@/src/lib/site";
+import { createMetadata, seoPages } from "@/src/lib/seo";
+
+export const metadata = createMetadata(seoPages.home);
 
 export default function Page() {
   return (

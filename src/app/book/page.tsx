@@ -3,6 +3,9 @@ import { ButtonLink } from "@/src/components/ButtonLink";
 import { PageHero } from "@/src/components/PageHero";
 import { SectionIntro } from "@/src/components/SectionIntro";
 import { contactDetails, facilities, hotelAlert, officeHours } from "@/src/lib/site";
+import { createMetadata, seoPages } from "@/src/lib/seo";
+
+export const metadata = createMetadata(seoPages.book);
 
 export default function Book() {
   return (

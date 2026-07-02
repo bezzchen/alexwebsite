@@ -4,6 +4,9 @@ import { ButtonLink } from "@/src/components/ButtonLink";
 import { PageHero } from "@/src/components/PageHero";
 import { SectionIntro } from "@/src/components/SectionIntro";
 import { facilities } from "@/src/lib/site";
+import { createMetadata, seoPages } from "@/src/lib/seo";
+
+export const metadata = createMetadata(seoPages.facilities);
 
 const groups = [
   { title: "Guest Essentials", items: facilities.essential },
