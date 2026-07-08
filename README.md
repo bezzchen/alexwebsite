@@ -14,6 +14,22 @@ Set the Google Maps Embed API key in `.env.local`:
 NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_google_maps_embed_api_key
 ```
 
+Set up the contact form with [Resend](https://resend.com):
+
+1. Verify `alexanderinn.co.nz` as a sending domain in Resend.
+2. Create a Resend API key.
+3. Add the following values to `.env.local` and to the Vercel project:
+
+```bash
+RESEND_API_KEY=re_your_api_key
+CONTACT_EMAIL_TO=info@alexanderinn.co.nz,barry.phasel235@gmail.com
+```
+
+`CONTACT_EMAIL_TO` accepts multiple comma-separated recipients. The form uses
+the guest's submitted email address as `Reply-To`, so replying to an enquiry
+from the recipient's mail client responds directly to the guest. Enquiries are
+sent from `Alexander Inn <info@alexanderinn.co.nz>`.
+
 First, run the development server:
 
 ```bash
@@ -47,9 +63,12 @@ Add this environment variable in Vercel under Project Settings → Environment V
 
 ```bash
 NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
+RESEND_API_KEY
+CONTACT_EMAIL_TO
 ```
 
-Use the same name for Production, Preview, and Development if all deployments should render the embedded map.
+Configure the values for Production, Preview, and Development as needed. Never
+prefix `RESEND_API_KEY` with `NEXT_PUBLIC_`; it must remain server-only.
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 

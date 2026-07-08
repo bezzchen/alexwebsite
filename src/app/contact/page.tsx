@@ -1,5 +1,5 @@
 import { AmenityIcon } from "@/src/components/AmenityIcon";
-import { ButtonLink } from "@/src/components/ButtonLink";
+import { ContactForm } from "@/src/components/ContactForm";
 import { MapFrame } from "@/src/components/MapFrame";
 import { PageHero } from "@/src/components/PageHero";
 import { SectionIntro } from "@/src/components/SectionIntro";
@@ -72,41 +72,7 @@ export default function Contact() {
           </div>
         </div>
 
-        <form className="ui-box bg-white p-6 md:p-8">
-          <h2 className="text-3xl font-semibold">Send an enquiry</h2>
-          <div className="mt-8 grid gap-5 sm:grid-cols-2">
-            <label className="grid gap-2 text-sm font-medium">
-              Name
-              <input className="min-h-12 border border-black/15 bg-stone-50 px-3 outline-none focus:border-black" name="name" />
-            </label>
-            <label className="grid gap-2 text-sm font-medium">
-              Email
-              <input className="min-h-12 border border-black/15 bg-stone-50 px-3 outline-none focus:border-black" name="email" type="email" />
-            </label>
-            <label className="grid gap-2 text-sm font-medium">
-              Phone
-              <input className="min-h-12 border border-black/15 bg-stone-50 px-3 outline-none focus:border-black" name="phone" />
-            </label>
-            <label className="grid gap-2 text-sm font-medium">
-              Topic
-              <select className="min-h-12 border border-black/15 bg-stone-50 px-3 outline-none focus:border-black" name="topic" defaultValue="booking">
-                <option value="booking">Booking</option>
-                <option value="parking">Parking</option>
-                <option value="arrival">Arrival</option>
-                <option value="general">General enquiry</option>
-              </select>
-            </label>
-            <label className="grid gap-2 text-sm font-medium sm:col-span-2">
-              Message
-              <textarea className="min-h-36 border border-black/15 bg-stone-50 p-3 outline-none focus:border-black" name="message" />
-            </label>
-          </div>
-          <div className="mt-6">
-            <ButtonLink href="/book" variant="secondary">
-              Book Now
-            </ButtonLink>
-          </div>
-        </form>
+        <ContactForm />
       </section>
 
       <section className="bg-white py-20">
