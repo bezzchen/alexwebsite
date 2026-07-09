@@ -18,17 +18,23 @@ Set up the contact form with [Resend](https://resend.com):
 
 1. Verify `alexanderinn.co.nz` as a sending domain in Resend.
 2. Create a Resend API key.
-3. Add the following values to `.env.local` and to the Vercel project:
+3. Register Google reCAPTCHA v3 keys for `alexanderinn.co.nz`,
+   `www.alexanderinn.co.nz`, and any local/preview domains you want to test.
+4. Add the following values to `.env.local` and to the Vercel project:
 
 ```bash
+NEXT_PUBLIC_RECAPTCHA_SITE_KEY=your_recaptcha_site_key
 RESEND_API_KEY=re_your_api_key
+RECAPTCHA_SECRET_KEY=your_recaptcha_secret_key
 CONTACT_EMAIL_TO=info@alexanderinn.co.nz,barry.phasel235@gmail.com
 ```
 
 `CONTACT_EMAIL_TO` accepts multiple comma-separated recipients. The form uses
 the guest's submitted email address as `Reply-To`, so replying to an enquiry
 from the recipient's mail client responds directly to the guest. Enquiries are
-sent from `Alexander Inn <info@alexanderinn.co.nz>`.
+sent from `Alexander Inn <info@alexanderinn.co.nz>`. The contact API fails
+closed if reCAPTCHA is not configured, so add the reCAPTCHA keys before
+deploying this change.
 
 First, run the development server:
 
@@ -63,12 +69,15 @@ Add this environment variable in Vercel under Project Settings → Environment V
 
 ```bash
 NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
+NEXT_PUBLIC_RECAPTCHA_SITE_KEY
 RESEND_API_KEY
+RECAPTCHA_SECRET_KEY
 CONTACT_EMAIL_TO
 ```
 
 Configure the values for Production, Preview, and Development as needed. Never
-prefix `RESEND_API_KEY` with `NEXT_PUBLIC_`; it must remain server-only.
+prefix `RESEND_API_KEY` or `RECAPTCHA_SECRET_KEY` with `NEXT_PUBLIC_`; they must
+remain server-only.
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 

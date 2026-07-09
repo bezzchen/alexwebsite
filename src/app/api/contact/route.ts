@@ -3,6 +3,20 @@ import { Resend } from "resend";
 const DEFAULT_RECIPIENT =
   "info@alexanderinn.co.nz,barry.phasel235@gmail.com";
 const DEFAULT_FROM = "Alexander Inn <info@alexanderinn.co.nz>";
+const RECAPTCHA_VERIFY_URL = "https://www.google.com/recaptcha/api/siteverify";
+const RECAPTCHA_ACTION = "contact_form";
+const RECAPTCHA_MIN_SCORE = 0.5;
+
+type RecaptchaVerificationResult =
+  | { ok: true }
+  | { ok: false; message: string; status: 400 | 502 | 503 };
+
+type RecaptchaVerifyResponse = {
+  success: boolean;
+  score?: number;
+  action?: string;
+  "error-codes"?: string[];
+};
 
 const topicLabels = {
   booking: "Booking",
@@ -40,6 +54,84 @@ function getRecipients() {
     .filter(Boolean);
 }
 
+async function verifyRecaptcha(
+  token: string,
+): Promise<RecaptchaVerificationResult> {
+  const secret = process.env.RECAPTCHA_SECRET_KEY;
+
+  if (!secret) {
+    console.error("reCAPTCHA environment variables are not configured.");
+    return {
+      ok: false,
+      message:
+        "Email is temporarily unavailable. Please call Alexander Inn directly.",
+      status: 503,
+    };
+  }
+
+  if (!token) {
+    return {
+      ok: false,
+      message: "Please verify the form and try again.",
+      status: 400,
+    };
+  }
+
+  let response: Response;
+
+  try {
+    response = await fetch(RECAPTCHA_VERIFY_URL, {
+      body: new URLSearchParams({
+        secret,
+        response: token,
+      }),
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      method: "POST",
+    });
+  } catch (error) {
+    console.error("reCAPTCHA verification request failed.", error);
+    return {
+      ok: false,
+      message: "We could not verify your request. Please try again.",
+      status: 502,
+    };
+  }
+
+  if (!response.ok) {
+    console.error("reCAPTCHA verification returned an error response.");
+    return {
+      ok: false,
+      message: "We could not verify your request. Please try again.",
+      status: 502,
+    };
+  }
+
+  const result = (await response.json()) as RecaptchaVerifyResponse;
+
+  if (
+    !result.success ||
+    result.action !== RECAPTCHA_ACTION ||
+    typeof result.score !== "number" ||
+    result.score < RECAPTCHA_MIN_SCORE
+  ) {
+    console.warn("reCAPTCHA rejected a contact form submission.", {
+      action: result.action,
+      errorCodes: result["error-codes"],
+      score: result.score,
+    });
+
+    return {
+      ok: false,
+      message: "We could not verify your request. Please try again.",
+      status: 400,
+    };
+  }
+
+  return { ok: true };
+}
+
 export async function POST(request: Request) {
   let payload: Record<string, unknown>;
 
@@ -58,6 +150,7 @@ export async function POST(request: Request) {
   const topic = readString(payload.topic);
   const message = readString(payload.message);
   const website = readString(payload.website);
+  const recaptchaToken = readString(payload.recaptchaToken);
 
   // Silently accept bot submissions caught by the honeypot.
   if (website) {
@@ -81,6 +174,15 @@ export async function POST(request: Request) {
     return Response.json(
       { message: "Please complete all required fields with valid details." },
       { status: 400 },
+    );
+  }
+
+  const recaptchaResult = await verifyRecaptcha(recaptchaToken);
+
+  if (!recaptchaResult.ok) {
+    return Response.json(
+      { message: recaptchaResult.message },
+      { status: recaptchaResult.status },
     );
   }
 

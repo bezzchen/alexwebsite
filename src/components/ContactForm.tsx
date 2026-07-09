@@ -1,6 +1,21 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import Script from "next/script";
+
+const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+const recaptchaAction = "contact_form";
+
+type Grecaptcha = {
+  ready(callback: () => void): void;
+  execute(siteKey: string, options: { action: string }): Promise<string>;
+};
+
+declare global {
+  interface Window {
+    grecaptcha?: Grecaptcha;
+  }
+}
 
 type FormStatus =
   | { state: "idle"; message: "" }
@@ -10,6 +25,29 @@ type FormStatus =
 
 const fieldClassName =
   "min-h-12 border border-black/15 bg-stone-50 px-3 outline-none focus:border-black disabled:cursor-not-allowed disabled:opacity-60";
+
+async function getRecaptchaToken() {
+  if (!recaptchaSiteKey) {
+    throw new Error("Contact form verification is not configured.");
+  }
+
+  const grecaptcha = window.grecaptcha;
+
+  if (!grecaptcha) {
+    throw new Error("Contact form verification is still loading. Please try again.");
+  }
+
+  return new Promise<string>((resolve, reject) => {
+    grecaptcha.ready(() => {
+      grecaptcha
+        .execute(recaptchaSiteKey, { action: recaptchaAction })
+        .then(resolve)
+        .catch(() => {
+          reject(new Error("Contact form verification failed. Please try again."));
+        });
+    });
+  });
+}
 
 export function ContactForm() {
   const [status, setStatus] = useState<FormStatus>({
@@ -29,6 +67,7 @@ export function ContactForm() {
     });
 
     try {
+      const recaptchaToken = await getRecaptchaToken();
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -39,6 +78,7 @@ export function ContactForm() {
           topic: formData.get("topic"),
           message: formData.get("message"),
           website: formData.get("website"),
+          recaptchaToken,
         }),
       });
 
@@ -71,113 +111,122 @@ export function ContactForm() {
   const isSubmitting = status.state === "submitting";
 
   return (
-    <form
-      className="ui-box relative bg-white p-6 md:p-8"
-      onSubmit={handleSubmit}
-    >
-      <h2 className="text-3xl font-semibold">Send an enquiry</h2>
-      <p className="mt-3 text-sm leading-6 text-black/65">
-        Complete the form and reception will reply directly to the email address
-        you provide.
-      </p>
+    <>
+      {recaptchaSiteKey ? (
+        <Script
+          src={`https://www.google.com/recaptcha/api.js?render=${recaptchaSiteKey}`}
+          strategy="afterInteractive"
+        />
+      ) : null}
 
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -left-[10000px] top-auto h-px w-px overflow-hidden"
+      <form
+        className="ui-box relative bg-white p-6 md:p-8"
+        onSubmit={handleSubmit}
       >
-        <label>
-          Website
-          <input
-            autoComplete="off"
-            name="website"
-            tabIndex={-1}
-            type="text"
-          />
-        </label>
-      </div>
+        <h2 className="text-3xl font-semibold">Send an enquiry</h2>
+        <p className="mt-3 text-sm leading-6 text-black/65">
+          Complete the form and reception will reply directly to the email
+          address you provide.
+        </p>
 
-      <fieldset disabled={isSubmitting}>
-        <div className="mt-8 grid gap-5 sm:grid-cols-2">
-          <label className="grid gap-2 text-sm font-medium">
-            Name
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -left-[10000px] top-auto h-px w-px overflow-hidden"
+        >
+          <label>
+            Website
             <input
-              autoComplete="name"
-              className={fieldClassName}
-              maxLength={100}
-              minLength={2}
-              name="name"
-              required
-            />
-          </label>
-          <label className="grid gap-2 text-sm font-medium">
-            Email
-            <input
-              autoComplete="email"
-              className={fieldClassName}
-              maxLength={254}
-              name="email"
-              required
-              type="email"
-            />
-          </label>
-          <label className="grid gap-2 text-sm font-medium">
-            Phone
-            <input
-              autoComplete="tel"
-              className={fieldClassName}
-              maxLength={50}
-              name="phone"
-              type="tel"
-            />
-          </label>
-          <label className="grid gap-2 text-sm font-medium">
-            Topic
-            <select
-              className={fieldClassName}
-              defaultValue="booking"
-              name="topic"
-            >
-              <option value="booking">Booking</option>
-              <option value="parking">Parking</option>
-              <option value="arrival">Arrival</option>
-              <option value="general">General enquiry</option>
-            </select>
-          </label>
-          <label className="grid gap-2 text-sm font-medium sm:col-span-2">
-            Message
-            <textarea
-              className={`${fieldClassName} min-h-36 p-3`}
-              maxLength={5000}
-              minLength={10}
-              name="message"
-              required
+              autoComplete="off"
+              name="website"
+              tabIndex={-1}
+              type="text"
             />
           </label>
         </div>
 
-        <button
-          className="mt-6 inline-flex min-h-11 items-center justify-center rounded-lg bg-[var(--gold)] px-6 py-3 text-sm font-semibold uppercase tracking-[0.08em] text-black shadow-[0_10px_22px_rgba(0,0,0,0.12)] transition hover:bg-[var(--gold-dark)] disabled:cursor-wait disabled:opacity-60"
-          type="submit"
-        >
-          {isSubmitting ? "Sending…" : "Send enquiry"}
-        </button>
-      </fieldset>
+        <fieldset disabled={isSubmitting}>
+          <div className="mt-8 grid gap-5 sm:grid-cols-2">
+            <label className="grid gap-2 text-sm font-medium">
+              Name
+              <input
+                autoComplete="name"
+                className={fieldClassName}
+                maxLength={100}
+                minLength={2}
+                name="name"
+                required
+              />
+            </label>
+            <label className="grid gap-2 text-sm font-medium">
+              Email
+              <input
+                autoComplete="email"
+                className={fieldClassName}
+                maxLength={254}
+                name="email"
+                required
+                type="email"
+              />
+            </label>
+            <label className="grid gap-2 text-sm font-medium">
+              Phone
+              <input
+                autoComplete="tel"
+                className={fieldClassName}
+                maxLength={50}
+                name="phone"
+                type="tel"
+              />
+            </label>
+            <label className="grid gap-2 text-sm font-medium">
+              Topic
+              <select
+                className={fieldClassName}
+                defaultValue="booking"
+                name="topic"
+              >
+                <option value="booking">Booking</option>
+                <option value="parking">Parking</option>
+                <option value="arrival">Arrival</option>
+                <option value="general">General enquiry</option>
+              </select>
+            </label>
+            <label className="grid gap-2 text-sm font-medium sm:col-span-2">
+              Message
+              <textarea
+                className={`${fieldClassName} min-h-36 p-3`}
+                maxLength={5000}
+                minLength={10}
+                name="message"
+                required
+              />
+            </label>
+          </div>
 
-      {status.message ? (
-        <p
-          aria-live="polite"
-          className={`mt-5 rounded-lg px-4 py-3 text-sm ${
-            status.state === "error"
-              ? "bg-red-50 text-red-800"
-              : status.state === "success"
-                ? "bg-green-50 text-green-800"
-                : "bg-stone-100 text-black/70"
-          }`}
-          role={status.state === "error" ? "alert" : "status"}
-        >
-          {status.message}
-        </p>
-      ) : null}
-    </form>
+          <button
+            className="mt-6 inline-flex min-h-11 items-center justify-center rounded-lg bg-[var(--gold)] px-6 py-3 text-sm font-semibold uppercase tracking-[0.08em] text-black shadow-[0_10px_22px_rgba(0,0,0,0.12)] transition hover:bg-[var(--gold-dark)] disabled:cursor-wait disabled:opacity-60"
+            type="submit"
+          >
+            {isSubmitting ? "Sending…" : "Send enquiry"}
+          </button>
+        </fieldset>
+
+        {status.message ? (
+          <p
+            aria-live="polite"
+            className={`mt-5 rounded-lg px-4 py-3 text-sm ${
+              status.state === "error"
+                ? "bg-red-50 text-red-800"
+                : status.state === "success"
+                  ? "bg-green-50 text-green-800"
+                  : "bg-stone-100 text-black/70"
+            }`}
+            role={status.state === "error" ? "alert" : "status"}
+          >
+            {status.message}
+          </p>
+        ) : null}
+      </form>
+    </>
   );
 }
