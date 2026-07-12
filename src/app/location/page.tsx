@@ -88,7 +88,7 @@ export default function Location() {
                 </div>
                 <p className="max-w-2xl text-sm leading-6 text-black/62">{section.intro}</p>
               </div>
-              <div className="mt-7 grid auto-rows-fr gap-5 md:grid-cols-2 lg:grid-cols-4">
+              <div className="mt-7 grid grid-flow-dense auto-rows-[minmax(280px,auto)] gap-5 md:grid-cols-2 lg:grid-cols-4">
                 {section.cards.map((card) => (
                   <LocationCardTile key={card.title} card={card} category={section.title} />
                 ))}

@@ -121,7 +121,7 @@ export default function Page() {
             View All Locations
           </ButtonLink>
         </div>
-        <div className="mt-10 grid auto-rows-fr gap-5 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid grid-flow-dense auto-rows-[minmax(280px,auto)] gap-5 md:grid-cols-2 lg:grid-cols-4">
           {homeLocationCards.slice(0, 6).map((card) => (
             <LocationCardTile key={card.title} card={card} category="Nearby" />
           ))}
