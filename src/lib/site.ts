@@ -148,6 +148,245 @@ export const locationQuickFacts = [
   "5 min walk to the city link bus system",
 ];
 
+export type LocationCard = {
+  title: string;
+  distance: string;
+  travel: string;
+  description: string;
+  featured?: boolean;
+  home?: boolean;
+};
+
+export const locationCardSections: { title: string; intro: string; cards: LocationCard[] }[] = [
+  {
+    title: "Major Attractions",
+    intro: "Family days, waterfront visits, and Auckland landmarks with practical drive estimates from 21 Alpers Avenue.",
+    cards: [
+      {
+        title: "Auckland Zoo",
+        distance: "8.5 km",
+        travel: "15-20 min drive",
+        description: "Native wildlife, conservation work, and family-friendly animal exhibits near Western Springs.",
+      },
+      {
+        title: "Auckland Stardome Observatory",
+        distance: "5.0 km",
+        travel: "10-15 min drive",
+        description: "Planetarium shows, night-sky sessions, and astronomy exhibits beside One Tree Hill.",
+      },
+      {
+        title: "Kelly Tarlton's Antarctic Encounter",
+        distance: "6.5 km",
+        travel: "12-18 min drive",
+        description: "Aquarium tunnels, penguin encounters, and sea-life displays along Tamaki Drive.",
+      },
+      {
+        title: "New Zealand National Maritime Museum",
+        distance: "5.2 km",
+        travel: "12-18 min drive",
+        description: "Waterfront museum tracing Aotearoa New Zealand's maritime stories and harbour history.",
+      },
+      {
+        title: "Mount Smart Stadium",
+        distance: "7.5 km",
+        travel: "15-20 min drive",
+        description: "Large-scale concerts, sports fixtures, and entertainment events in Penrose.",
+      },
+    ],
+  },
+  {
+    title: "City Centre & Shopping",
+    intro: "Newmarket shopping is close on foot, while central-city icons and waterfront dining are an easy drive.",
+    cards: [
+      {
+        title: "Auckland City, Sky Tower",
+        distance: "4.1 km",
+        travel: "10-15 min drive",
+        description: "Auckland's skyline landmark with observation decks, dining, and central-city connections.",
+        featured: true,
+        home: true,
+      },
+      {
+        title: "Westfield Shopping Centre",
+        distance: "700 m",
+        travel: "8-10 min walk",
+        description: "Newmarket fashion, dining, rooftop restaurants, cinema access, and everyday essentials.",
+        featured: true,
+        home: true,
+      },
+      {
+        title: "Woolworths Supermarket",
+        distance: "750 m",
+        travel: "8-10 min walk",
+        description: "A convenient Newmarket grocery stop for snacks, supplies, and longer-stay basics.",
+      },
+      {
+        title: "Event Cinemas",
+        distance: "800 m",
+        travel: "10 min walk",
+        description: "Modern movie theatres beside Newmarket shopping and casual dining options.",
+      },
+      {
+        title: "Princes Wharf",
+        distance: "5.4 km",
+        travel: "12-18 min drive",
+        description: "Harbour views, waterfront restaurants, ferry access, and downtown evening plans.",
+      },
+      {
+        title: "Mission Bay",
+        distance: "7.0 km",
+        travel: "12-18 min drive",
+        description: "Beachfront dining, relaxed promenade walks, and Waitemata Harbour views.",
+      },
+    ],
+  },
+  {
+    title: "Sports & Entertainment Venues",
+    intro: "Event venues across Greenlane, Kingsland, Penrose, and the CBD are within straightforward driving range.",
+    cards: [
+      {
+        title: "ASB Showground",
+        distance: "3.0 km",
+        travel: "6-10 min drive",
+        description: "Exhibitions, shows, and large public events near Greenlane and Epsom.",
+      },
+      {
+        title: "One Tree Hill",
+        distance: "4.5 km",
+        travel: "10-15 min drive",
+        description: "Historic volcanic parkland with walking tracks, open lawns, and city views.",
+      },
+      {
+        title: "Ellerslie Racecourse",
+        distance: "4.2 km",
+        travel: "8-12 min drive",
+        description: "Racing, corporate events, and conference facilities close to Greenlane.",
+      },
+      {
+        title: "Eden Park",
+        distance: "5.0 km",
+        travel: "12-18 min drive",
+        description: "New Zealand's national stadium for rugby, cricket, concerts, and major fixtures.",
+        featured: true,
+        home: true,
+      },
+      {
+        title: "Spark Arena",
+        distance: "3.8 km",
+        travel: "8-12 min drive",
+        description: "Central Auckland arena for concerts, international acts, sports, and large events.",
+        home: true,
+      },
+    ],
+  },
+  {
+    title: "Medical Facilities",
+    intro: "Specialist clinics and major hospitals are close enough for appointments, family visits, and medical travel.",
+    cards: [
+      {
+        title: "Greenlane Hospital",
+        distance: "2.3 km",
+        travel: "5-8 min drive",
+        description: "Specialist outpatient services and clinical care near the Greenlane corridor.",
+      },
+      {
+        title: "Mercy Ascot Hospital Epsom",
+        distance: "1.8 km",
+        travel: "5-8 min drive",
+        description: "Private healthcare, appointments, and specialist services close to Epsom.",
+      },
+      {
+        title: "Ascot Hospital",
+        distance: "3.5 km",
+        travel: "8-12 min drive",
+        description: "Private surgical and medical care within easy reach of Newmarket.",
+      },
+      {
+        title: "Auckland Hospital",
+        distance: "2.4 km",
+        travel: "6-10 min drive",
+        description: "Major public hospital beside Auckland Domain and the central medical precinct.",
+        featured: true,
+      },
+    ],
+  },
+  {
+    title: "Educational Institutions",
+    intro: "A practical base for campus visits, school events, interviews, and family appointments.",
+    cards: [
+      {
+        title: "University of Auckland",
+        distance: "3.1 km",
+        travel: "8-12 min drive",
+        description: "Central city campus for university visits, study, conferences, and appointments.",
+        featured: true,
+        home: true,
+      },
+      {
+        title: "Dilworth",
+        distance: "1.7 km",
+        travel: "5 min drive",
+        description: "Independent boys' school in Epsom, a short drive from Alpers Avenue.",
+      },
+      {
+        title: "Diocesan School for Girls",
+        distance: "1.3 km",
+        travel: "15-18 min walk",
+        description: "Independent girls' school near Epsom and Remuera.",
+      },
+      {
+        title: "St Cuthbert's College",
+        distance: "2.2 km",
+        travel: "5-8 min drive",
+        description: "Independent girls' college on Market Road with quick access from Newmarket.",
+      },
+      {
+        title: "Epsom Girls Grammar School",
+        distance: "1.1 km",
+        travel: "14 min walk",
+        description: "Public girls' high school close to Newmarket, Epsom, and the Domain side of town.",
+      },
+      {
+        title: "Auckland Grammar School",
+        distance: "1.6 km",
+        travel: "5 min drive",
+        description: "Public boys' high school beside Auckland Domain and central transport links.",
+      },
+      {
+        title: "Auckland Museum & Domain",
+        distance: "2.0 km",
+        travel: "5-8 min drive",
+        description: "Museum, war memorial, Wintergardens, and open parkland above Newmarket.",
+        featured: true,
+        home: true,
+      },
+    ],
+  },
+  {
+    title: "Recommended Accommodation",
+    intro: "Accommodation options from the source card set, adjusted around Alexander Inn as the Newmarket base.",
+    cards: [
+      {
+        title: "Hobson Lodge",
+        distance: "4.8 km",
+        travel: "10-15 min drive",
+        description: "Budget accommodation option closer to the CBD and Aotea precinct.",
+      },
+      {
+        title: "Alexander Inn",
+        distance: "0 km",
+        travel: "You are here",
+        description: "Your Newmarket base at 21 Alpers Avenue, close to shopping, hospitals, schools, and transport.",
+        featured: true,
+      },
+    ],
+  },
+];
+
+export const homeLocationCards = locationCardSections.flatMap((section) =>
+  section.cards.filter((card) => card.home),
+);
+
 export const transportDirections = [
   {
     title: "By Car",

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { AmenityIcon } from "@/src/components/AmenityIcon";
 import { ButtonLink } from "@/src/components/ButtonLink";
+import { LocationCardTile } from "@/src/components/LocationCardTile";
 import { MapFrame } from "@/src/components/MapFrame";
 import { PageHero } from "@/src/components/PageHero";
 import { SectionIntro } from "@/src/components/SectionIntro";
@@ -9,6 +10,7 @@ import {
   discoverCards,
   homeHighlights,
   homeIntro,
+  homeLocationCards,
   reviews,
   roomTypes,
 } from "@/src/lib/site";
@@ -105,6 +107,24 @@ export default function Page() {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 py-20 md:px-8">
+        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <SectionIntro
+            eyebrow="Nearby Auckland"
+            title="Popular stops from a Newmarket base."
+            body="A quick preview of major landmarks, shopping, venues, and campus destinations near Alexander Inn."
+          />
+          <ButtonLink href="/location" variant="ghost">
+            View All Locations
+          </ButtonLink>
+        </div>
+        <div className="mt-10 grid auto-rows-fr gap-5 md:grid-cols-2 lg:grid-cols-4">
+          {homeLocationCards.slice(0, 6).map((card) => (
+            <LocationCardTile key={card.title} card={card} category="Nearby" />
+          ))}
         </div>
       </section>
 

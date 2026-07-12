@@ -1,10 +1,12 @@
 import { AmenityIcon } from "@/src/components/AmenityIcon";
 import { ButtonLink } from "@/src/components/ButtonLink";
+import { LocationCardTile } from "@/src/components/LocationCardTile";
 import { MapFrame } from "@/src/components/MapFrame";
 import { PageHero } from "@/src/components/PageHero";
 import { SectionIntro } from "@/src/components/SectionIntro";
 import {
   contactDetails,
+  locationCardSections,
   locationIntro,
   locationQuickFacts,
   transportDirections,
@@ -64,6 +66,35 @@ export default function Location() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 py-20 md:px-8">
+        <SectionIntro
+          eyebrow="Explore nearby"
+          title="Landmarks, venues, schools, and services from Alexander Inn."
+          body="These cards adapt the nearby-place set from the Newmarket location reference, with distances and travel times estimated from 21 Alpers Avenue."
+          align="center"
+        />
+        <div className="mt-14 space-y-16">
+          {locationCardSections.map((section) => (
+            <div key={section.title}>
+              <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--gold-dark)]">
+                    {section.title}
+                  </p>
+                  <h2 className="mt-2 text-3xl font-semibold">{section.title}</h2>
+                </div>
+                <p className="max-w-2xl text-sm leading-6 text-black/62">{section.intro}</p>
+              </div>
+              <div className="mt-7 grid auto-rows-fr gap-5 md:grid-cols-2 lg:grid-cols-4">
+                {section.cards.map((card) => (
+                  <LocationCardTile key={card.title} card={card} category={section.title} />
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
