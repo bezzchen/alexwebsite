@@ -61,3 +61,28 @@ img {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
   overflow: hidden;
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  body.reveal-ready .page-reveal-item {
+    opacity: 0;
+    transform: translate3d(0, 28px, 0);
+    transition:
+      opacity 680ms ease,
+      transform 680ms ease;
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+  }
+
+  body.reveal-ready .page-reveal-item.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-reveal-item {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

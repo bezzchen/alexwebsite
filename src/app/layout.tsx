@@ -1,6 +1,7 @@
 import "./globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { PageReveal } from "../components/PageReveal";
 import type { Metadata } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import {
@@ -58,6 +59,7 @@ export default function RootLayout({
         />
         <Header />
         {children}
+        <PageReveal />
         <Footer />
       </body>
       <GoogleAnalytics gaId="G-RD0TBM8QSE" />
