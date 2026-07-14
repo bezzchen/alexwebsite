@@ -165,7 +165,7 @@ export function iconNameForLabel(label: string): IconName {
   if (text.includes("train")) return "train";
   if (text.includes("bus")) return "bus";
   if (text.includes("check in") || text.includes("check out") || text.includes("hours") || text.includes("reception")) return "calendar";
-  if (text.includes("phone") || text.includes("freephone") || text.includes("international")) return "phone";
+  if (text.includes("phone") || text.includes("freephone") || text.includes("international") || text.includes("mobile")) return "phone";
   if (text.includes("location") || text.includes("avenue") || text.includes("central") || text.includes("near") || text.includes("walk")) return "map";
   if (text.includes("shopping") || text.includes("restaurants") || text.includes("cafes") || text.includes("cinemas")) return "shopping";
   if (text.includes("security") || text.includes("secure") || text.includes("safe")) return "shield";

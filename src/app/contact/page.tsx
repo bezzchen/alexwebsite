@@ -68,6 +68,20 @@ export default function Contact() {
                   </div>
                 </div>
               </a>
+              <a
+                href={`tel:${contactDetails.mobile.replaceAll(" ", "")}`}
+                className="ui-box bg-white p-6 transition hover:-translate-y-1"
+              >
+                <div className="flex items-start gap-3">
+                  <AmenityIcon label="Mobile phone" />
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--gold-dark)]">
+                      Mobile
+                    </p>
+                    <p className="mt-3 text-2xl font-semibold">{contactDetails.mobile}</p>
+                  </div>
+                </div>
+              </a>
             </div>
           </div>
         </div>

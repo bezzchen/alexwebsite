@@ -70,6 +70,13 @@ export default function Footer() {
                 {contactDetails.international}
               </a>
             </p>
+            <p>
+              Mobile
+              <br />
+              <a className="text-white hover:text-[var(--gold)]" href={`tel:${contactDetails.mobile.replaceAll(" ", "")}`}>
+                {contactDetails.mobile}
+              </a>
+            </p>
           </div>
         </div>
 

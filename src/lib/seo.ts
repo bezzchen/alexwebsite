@@ -207,7 +207,11 @@ export const structuredData = {
         absoluteUrl("/images/3.jpg"),
       ],
       description: defaultDescription,
-      telephone: [contactDetails.freephone, contactDetails.international],
+      telephone: [
+        contactDetails.freephone,
+        contactDetails.international,
+        contactDetails.mobile,
+      ],
       address: {
         "@type": "PostalAddress",
         streetAddress: "21 Alpers Avenue",
