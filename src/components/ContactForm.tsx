@@ -121,6 +121,7 @@ export function ContactForm() {
 
       <form
         className="ui-box relative bg-white p-6 md:p-8"
+        data-reveal
         onSubmit={handleSubmit}
       >
         <h2 className="text-3xl font-semibold">Send an enquiry</h2>

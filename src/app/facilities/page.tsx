@@ -43,7 +43,7 @@ export default function Facilities() {
 
         <div className="grid gap-6">
           {groups.map((group) => (
-            <section key={group.title} className="ui-box bg-white p-6 md:p-8">
+            <section key={group.title} className="ui-box bg-white p-6 md:p-8" data-reveal>
               <h2 className="text-2xl font-semibold">{group.title}</h2>
               <ul className="mt-6 grid gap-3 sm:grid-cols-2">
                 {group.items.map((item) => (
@@ -60,7 +60,7 @@ export default function Facilities() {
 
       <section className="bg-white py-20">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 md:grid-cols-2 md:items-center md:px-8">
-          <div className="ui-box relative min-h-[420px] bg-black">
+          <div className="ui-box relative min-h-[420px] bg-black" data-reveal>
             <Image
               src="/images/1.jpg"
               alt="Alexander Inn facilities"
@@ -77,7 +77,7 @@ export default function Facilities() {
             />
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               {["Free Wi-Fi Broadband 24/7", "Daily room servicing", "Central Auckland access", "Onsite parking subject to availability"].map((item) => (
-                <div key={item} className="ui-box-soft flex items-center gap-3 border-l-2 border-[var(--gold)] bg-[var(--page-bg)] p-4 text-sm font-medium">
+                <div key={item} className="ui-box-soft flex items-center gap-3 border-l-2 border-[var(--gold)] bg-[var(--page-bg)] p-4 text-sm font-medium" data-reveal>
                   <AmenityIcon label={item} />
                   <span>{item}</span>
                 </div>

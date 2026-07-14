@@ -8,14 +8,34 @@ export function PageReveal() {
 
   useEffect(() => {
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const items = Array.from(document.querySelectorAll("main > *")).filter(
+    const items = Array.from(document.querySelectorAll("main [data-reveal]")).filter(
       (item): item is HTMLElement => item instanceof HTMLElement,
     );
+    const revealGroups = new Map<Element, HTMLElement[]>();
 
-    items.forEach((item, index) => {
+    items.forEach((item) => {
       item.classList.add("page-reveal-item");
       item.classList.remove("is-visible");
-      item.style.setProperty("--reveal-delay", `${Math.min(index, 6) * 70}ms`);
+
+      const group = item.closest("[data-reveal-group]") ?? item.parentElement ?? document.body;
+      const groupedItems = revealGroups.get(group);
+
+      if (groupedItems) {
+        groupedItems.push(item);
+      } else {
+        revealGroups.set(group, [item]);
+      }
+    });
+
+    revealGroups.forEach((groupedItems) => {
+      groupedItems.forEach((item, index) => {
+        const requestedDelay = Number(item.dataset.revealDelay);
+        const delay = Number.isFinite(requestedDelay)
+          ? requestedDelay
+          : Math.min(index, 8) * 80;
+
+        item.style.setProperty("--reveal-delay", `${delay}ms`);
+      });
     });
 
     document.body.classList.add("reveal-ready");

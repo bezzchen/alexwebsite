@@ -29,7 +29,7 @@ export default function Rooms() {
           />
           <div className="grid gap-5 sm:grid-cols-3">
             {["Double glazing", "Marble tiled bathrooms", "Balconies and sun seats"].map((item) => (
-              <div key={item} className="ui-box-soft flex items-center gap-3 border-l-2 border-[var(--gold)] bg-white p-5">
+              <div key={item} className="ui-box-soft flex items-center gap-3 border-l-2 border-[var(--gold)] bg-white p-5" data-reveal>
                 <AmenityIcon label={item} />
                 <p className="text-lg font-semibold">{item}</p>
               </div>
@@ -47,7 +47,7 @@ export default function Rooms() {
           />
           <div className="mt-12 grid gap-7 md:grid-cols-2">
             {roomTypes.map((room) => (
-              <article key={room.name} className="ui-box grid border border-black/10 bg-[var(--paper)] lg:grid-cols-[0.95fr_1.05fr]">
+              <article key={room.name} className="ui-box grid border border-black/10 bg-[var(--paper)] lg:grid-cols-[0.95fr_1.05fr]" data-reveal>
                 <div className="relative min-h-[280px] bg-black">
                   <Image
                     src={room.image}
@@ -83,7 +83,7 @@ export default function Rooms() {
       </section>
 
       <section className="mx-auto grid max-w-7xl gap-10 px-5 py-20 md:grid-cols-[1.1fr_0.9fr] md:items-center md:px-8">
-        <div className="ui-box relative min-h-[420px] bg-black">
+        <div className="ui-box relative min-h-[420px] bg-black" data-reveal>
           <Image
             src="/images/3.jpg"
             alt="Alexander Inn suite interior"

@@ -33,12 +33,12 @@ export default function Location() {
             eyebrow="Find us"
             title="21 Alpers Avenue, Newmarket."
           />
-          <div className="mt-6 space-y-4 text-base leading-8 text-black/68">
+          <div className="mt-6 space-y-4 text-base leading-8 text-black/68" data-reveal>
             {locationIntro.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
-          <div className="ui-box-soft mt-6 flex gap-3 border-l-2 border-[var(--gold)] bg-white p-5 text-sm leading-6 text-black/68">
+          <div className="ui-box-soft mt-6 flex gap-3 border-l-2 border-[var(--gold)] bg-white p-5 text-sm leading-6 text-black/68" data-reveal>
             <AmenityIcon label={contactDetails.address} />
             <p>{contactDetails.address}</p>
           </div>
@@ -60,7 +60,7 @@ export default function Location() {
           />
           <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {locationQuickFacts.map((fact) => (
-              <div key={fact} className="ui-box-soft flex gap-3 border-l-2 border-[var(--gold)] bg-[var(--page-bg)] p-5 text-sm font-medium leading-6">
+              <div key={fact} className="ui-box-soft flex gap-3 border-l-2 border-[var(--gold)] bg-[var(--page-bg)] p-5 text-sm font-medium leading-6" data-reveal>
                 <AmenityIcon label={fact} />
                 <span>{fact}</span>
               </div>
@@ -79,14 +79,14 @@ export default function Location() {
         <div className="mt-14 space-y-16">
           {locationCardSections.map((section) => (
             <div key={section.title}>
-              <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+              <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between" data-reveal-group>
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--gold-dark)]">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--gold-dark)]" data-reveal>
                     {section.title}
                   </p>
-                  <h2 className="mt-2 text-3xl font-semibold">{section.title}</h2>
+                  <h2 className="mt-2 text-3xl font-semibold" data-reveal>{section.title}</h2>
                 </div>
-                <p className="max-w-2xl text-sm leading-6 text-black/62">{section.intro}</p>
+                <p className="max-w-2xl text-sm leading-6 text-black/62" data-reveal>{section.intro}</p>
               </div>
               <div className="mt-7 grid grid-flow-dense auto-rows-[minmax(280px,auto)] gap-5 md:grid-cols-2 lg:grid-cols-4">
                 {section.cards.map((card) => (
@@ -107,7 +107,7 @@ export default function Location() {
           />
           <div className="grid gap-5">
             {transportDirections.map((section) => (
-              <article key={section.title} className="ui-box bg-white p-6 md:p-8">
+              <article key={section.title} className="ui-box bg-white p-6 md:p-8" data-reveal>
                 <h2 className="flex items-center gap-3 text-2xl font-semibold">
                   <AmenityIcon label={section.title} />
                   <span>{section.title}</span>

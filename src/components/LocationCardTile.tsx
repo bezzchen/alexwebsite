@@ -20,6 +20,7 @@ export function LocationCardTile({ card, category }: LocationCardTileProps) {
   return (
     <article
       className={`ui-box group relative isolate flex h-full flex-col overflow-hidden bg-black text-white transition duration-300 hover:-translate-y-1 ${sizeClass}`}
+      data-reveal
     >
       <Image
         src={card.image}

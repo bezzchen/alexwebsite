@@ -32,7 +32,7 @@ export default function Page() {
       />
 
       <section className="mx-auto grid max-w-7xl gap-12 px-5 py-20 md:grid-cols-[0.95fr_1.05fr] md:items-center md:px-8">
-        <div className="ui-box relative min-h-[460px] bg-black">
+        <div className="ui-box relative min-h-[460px] bg-black" data-reveal>
           <Image
             src="/images/1.jpg"
             alt="Alexander Inn guest area"
@@ -46,7 +46,7 @@ export default function Page() {
             eyebrow="Welcome"
             title="Modern comfort within minutes of central Auckland."
           />
-          <div className="mt-7 space-y-5 text-base leading-8 text-black/68">
+          <div className="mt-7 space-y-5 text-base leading-8 text-black/68" data-reveal>
             {homeIntro.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
@@ -57,7 +57,7 @@ export default function Page() {
               ["13 km", "to Auckland International Airport"],
               ["24/7", "free Wi-Fi Broadband"],
             ].map(([value, label]) => (
-              <div key={value} className="ui-box-soft border-l-2 border-[var(--gold)] bg-white p-4">
+              <div key={value} className="ui-box-soft border-l-2 border-[var(--gold)] bg-white p-4" data-reveal>
                 <div className="flex items-start gap-3">
                   <AmenityIcon label={label} />
                   <div>
@@ -85,6 +85,7 @@ export default function Page() {
                 key={card.href}
                 href={card.href}
                 className="ui-box group relative min-h-[420px] bg-black text-white"
+                data-reveal
               >
                 <Image
                   src={card.image}
@@ -137,7 +138,7 @@ export default function Page() {
           />
           <div className="grid gap-5 sm:grid-cols-2">
             {roomTypes.map((room) => (
-              <article key={room.name} className="ui-box bg-white">
+              <article key={room.name} className="ui-box bg-white" data-reveal>
                 <div className="relative h-56 overflow-hidden bg-black">
                   <Image
                     src={room.image}
@@ -159,16 +160,16 @@ export default function Page() {
 
       <section className="bg-black py-20 text-white">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 md:grid-cols-[0.9fr_1.1fr] md:items-center md:px-8">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--gold)]">
+          <div data-reveal-group>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--gold)]" data-reveal>
               Find us
             </p>
-            <h2 className="mt-3 text-4xl font-semibold leading-tight md:text-5xl">
+            <h2 className="mt-3 text-4xl font-semibold leading-tight md:text-5xl" data-reveal>
               A Newmarket base near the places guests need.
             </h2>
             <div className="mt-6 space-y-4 text-base leading-8 text-white/68">
               {homeHighlights.map((item) => (
-                <div key={item.title}>
+                <div key={item.title} data-reveal>
                   <h3 className="flex items-center gap-3 font-semibold text-white">
                     <AmenityIcon label={`${item.title} ${item.text}`} className="bg-white/12 text-[var(--gold)]" />
                     <span>{item.title}</span>
@@ -199,7 +200,7 @@ export default function Page() {
         </div>
         <div className="mt-10 grid gap-5 md:grid-cols-3">
           {reviews.slice(0, 3).map((review) => (
-            <article key={review.meta} className="ui-box bg-white p-6">
+            <article key={review.meta} className="ui-box bg-white p-6" data-reveal>
               <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--gold-dark)]">
                 {review.meta}
               </p>

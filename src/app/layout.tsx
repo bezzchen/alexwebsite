@@ -2,6 +2,7 @@ import "./globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { PageReveal } from "../components/PageReveal";
+import { SmoothScroll } from "../components/SmoothScroll";
 import type { Metadata } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import {
@@ -59,6 +60,7 @@ export default function RootLayout({
         />
         <Header />
         {children}
+        <SmoothScroll />
         <PageReveal />
         <Footer />
       </body>

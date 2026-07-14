@@ -30,7 +30,7 @@ export default function Reviews() {
         />
         <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {featured.map((review) => (
-            <article key={review.meta} className="ui-box bg-white p-6">
+            <article key={review.meta} className="ui-box bg-white p-6" data-reveal>
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--gold-dark)]">
                 {review.meta}
               </p>
@@ -54,7 +54,7 @@ export default function Reviews() {
           </div>
           <div className="mt-12 columns-1 gap-5 md:columns-2 xl:columns-3">
             {archive.map((review) => (
-              <article key={`${review.meta}-${review.quote.slice(0, 24)}`} className="ui-box mb-5 break-inside-avoid bg-[var(--page-bg)] p-6">
+              <article key={`${review.meta}-${review.quote.slice(0, 24)}`} className="ui-box mb-5 break-inside-avoid bg-[var(--page-bg)] p-6" data-reveal>
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--gold-dark)]">
                   {review.meta}
                 </p>

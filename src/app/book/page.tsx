@@ -30,6 +30,7 @@ export default function Book() {
             <a
               href={`tel:${contactDetails.freephone.replaceAll(" ", "")}`}
               className="ui-box bg-white p-6 transition hover:-translate-y-1"
+              data-reveal
             >
               <div className="flex items-start gap-3">
                 <AmenityIcon label="Freephone NZ" />
@@ -44,6 +45,7 @@ export default function Book() {
             <a
               href={`tel:${contactDetails.international.replaceAll(" ", "")}`}
               className="ui-box bg-white p-6 transition hover:-translate-y-1"
+              data-reveal
             >
               <div className="flex items-start gap-3">
                 <AmenityIcon label="International phone" />
@@ -58,6 +60,7 @@ export default function Book() {
             <a
               href={`tel:${contactDetails.mobile.replaceAll(" ", "")}`}
               className="ui-box bg-white p-6 transition hover:-translate-y-1"
+              data-reveal
             >
               <div className="flex items-start gap-3">
                 <AmenityIcon label="Mobile phone" />
@@ -81,7 +84,7 @@ export default function Book() {
         </div>
 
         <div className="grid gap-5">
-          <section className="ui-box bg-white p-6 md:p-8">
+          <section className="ui-box bg-white p-6 md:p-8" data-reveal>
             <h2 className="text-2xl font-semibold">Arrival details</h2>
             <ul className="mt-6 grid gap-3">
               {facilities.checkIn.map((item) => (
@@ -92,7 +95,7 @@ export default function Book() {
               ))}
             </ul>
           </section>
-          <section className="ui-box bg-white p-6 md:p-8">
+          <section className="ui-box bg-white p-6 md:p-8" data-reveal>
             <h2 className="text-2xl font-semibold">Office hours</h2>
             <ul className="mt-6 grid gap-3">
               {officeHours.map((item) => (
@@ -103,7 +106,7 @@ export default function Book() {
               ))}
             </ul>
           </section>
-          <section className="ui-box bg-black p-6 text-white md:p-8">
+          <section className="ui-box bg-black p-6 text-white md:p-8" data-reveal>
             <h2 className="text-2xl font-semibold">Hotel alert</h2>
             <div className="mt-5 space-y-3 text-sm leading-6 text-white/70">
               {hotelAlert.map((item) => (

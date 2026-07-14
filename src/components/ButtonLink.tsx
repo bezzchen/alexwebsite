@@ -24,6 +24,7 @@ export function ButtonLink({
     <Link
       href={href}
       className={`inline-flex min-h-11 items-center justify-center rounded-lg px-6 py-3 text-sm font-semibold uppercase tracking-[0.08em] shadow-[0_10px_22px_rgba(0,0,0,0.12)] transition ${variants[variant]} ${className}`}
+      data-reveal
     >
       {children}
     </Link>

@@ -28,7 +28,7 @@ export default function News() {
         />
         <div className="mt-12 grid gap-7 md:grid-cols-3">
           {newsItems.map((item) => (
-            <article key={item.title} className="ui-box bg-white">
+            <article key={item.title} className="ui-box bg-white" data-reveal>
               <div className="relative h-64 overflow-hidden bg-black">
                 <Image
                   src={item.image}
@@ -52,15 +52,15 @@ export default function News() {
 
       <section className="bg-black py-20 text-white">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 md:grid-cols-[1fr_auto] md:items-center md:px-8">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--gold)]">
+          <div data-reveal-group>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--gold)]" data-reveal>
               Plan your stay
             </p>
-            <h2 className="mt-3 max-w-3xl text-4xl font-semibold leading-tight md:text-5xl">
+            <h2 className="mt-3 max-w-3xl text-4xl font-semibold leading-tight md:text-5xl" data-reveal>
               Stay close to Newmarket shopping, cafes, hospitals, and central Auckland.
             </h2>
           </div>
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-3" data-reveal-group>
             <ButtonLink href="/rooms" variant="secondary">
               View Rooms
             </ButtonLink>

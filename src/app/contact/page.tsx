@@ -28,7 +28,7 @@ export default function Contact() {
             body="Direct phone contact is best for urgent arrival details, parking availability, and same-day accommodation questions."
           />
           <div className="mt-8 grid gap-4">
-            <div className="ui-box bg-white p-6">
+            <div className="ui-box bg-white p-6" data-reveal>
               <div className="flex items-start gap-3">
                 <AmenityIcon label={contactDetails.address} />
                 <div>
@@ -43,6 +43,7 @@ export default function Contact() {
               <a
                 href={`tel:${contactDetails.freephone.replaceAll(" ", "")}`}
                 className="ui-box bg-white p-6 transition hover:-translate-y-1"
+                data-reveal
               >
                 <div className="flex items-start gap-3">
                   <AmenityIcon label="Freephone NZ" />
@@ -57,6 +58,7 @@ export default function Contact() {
               <a
                 href={`tel:${contactDetails.international.replaceAll(" ", "")}`}
                 className="ui-box bg-white p-6 transition hover:-translate-y-1"
+                data-reveal
               >
                 <div className="flex items-start gap-3">
                   <AmenityIcon label="International phone" />
@@ -71,6 +73,7 @@ export default function Contact() {
               <a
                 href={`tel:${contactDetails.mobile.replaceAll(" ", "")}`}
                 className="ui-box bg-white p-6 transition hover:-translate-y-1"
+                data-reveal
               >
                 <div className="flex items-start gap-3">
                   <AmenityIcon label="Mobile phone" />
@@ -95,13 +98,13 @@ export default function Contact() {
             <SectionIntro eyebrow="Office hours" title="Reception availability." />
             <ul className="mt-7 grid gap-4">
               {officeHours.map((item) => (
-                <li key={item} className="ui-box-soft flex items-center gap-3 border-l-2 border-[var(--gold)] bg-[var(--page-bg)] p-5 text-sm font-medium">
+                <li key={item} className="ui-box-soft flex items-center gap-3 border-l-2 border-[var(--gold)] bg-[var(--page-bg)] p-5 text-sm font-medium" data-reveal>
                   <AmenityIcon label={item} />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
-            <div className="ui-box mt-8 bg-black p-6 text-white">
+            <div className="ui-box mt-8 bg-black p-6 text-white" data-reveal>
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--gold)]">
                 Hotel alert
               </p>
