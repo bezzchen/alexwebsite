@@ -243,6 +243,13 @@ export const locationCardSections: { title: string; intro: string; cards: Locati
         image: "/images/eventcinema.jpg",
       },
       {
+        title: "Newmarket Train Station",
+        distance: "900 m",
+        travel: "10 min walk",
+        description: "Local rail station for Auckland train connections",
+        image: "/images/westfield.webp",
+      },
+      {
         title: "Princes Wharf",
         distance: "5.4 km",
         travel: "12-18 min drive",
@@ -303,6 +310,14 @@ export const locationCardSections: { title: string; intro: string; cards: Locati
         image: "/images/sparkarena.webp",
         home: true,
       },
+      {
+        title: "NZICC",
+        distance: "4.4 km",
+        travel: "10-15 min drive",
+        description: "CBD convention and event venue",
+        image: "/images/skytower.jpg",
+        size: "wide",
+      },
     ],
   },
   {
@@ -323,6 +338,20 @@ export const locationCardSections: { title: string; intro: string; cards: Locati
         description: "Private hospital and medical center",
         image: "/images/mercyascot.jpg",
         size: "wide",
+      },
+      {
+        title: "Kakariki Hospital",
+        distance: "2.6 km",
+        travel: "6-10 min drive",
+        description: "Elective surgical hospital in Greenlane",
+        image: "/images/greenlanehospital.jpg",
+      },
+      {
+        title: "Auckland Radiology Group (Remuera)",
+        distance: "1.1 km",
+        travel: "3-5 min drive",
+        description: "Specialist imaging clinic at 99 Remuera Road",
+        image: "/images/mercyascot.jpg",
       },
       {
         title: "Ascot Hospital",
