@@ -40,7 +40,7 @@ export default function Header() {
         </nav>
 
         <div className="hidden lg:block">
-          <ButtonLink href="/book" variant="secondary">
+          <ButtonLink href="https://book-directonline.com/properties/alexanderinndirect" variant="secondary">
             Book
           </ButtonLink>
         </div>
