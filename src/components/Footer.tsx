@@ -93,6 +93,9 @@ export default function Footer() {
                 {item.label}
               </Link>
             ))}
+            <Link href="/privacy" className="hover:text-white">
+              Privacy Policy
+            </Link>
           </nav>
         </div>
 

@@ -130,6 +130,18 @@ export const seoPages = {
       "Alexander Inn updates",
     ],
   },
+  privacy: {
+    title: "Privacy Policy",
+    description:
+      "Read how Alexander Inn collects, uses, stores, and protects personal information submitted through this website.",
+    path: "/privacy",
+    image: "/images/1.jpg",
+    keywords: [
+      "Alexander Inn privacy policy",
+      "Newmarket accommodation privacy",
+      "website personal information",
+    ],
+  },
 } satisfies Record<string, PageSeo>;
 
 export const sitemapPages = Object.values(seoPages);
