@@ -7,7 +7,7 @@ export function MapFrame({ height = 520 }: { height?: number }) {
 
   if (!apiKey) {
     return (
-      <div className="ui-box flex min-h-[360px] flex-col justify-between border border-black/10 bg-white p-8" data-reveal data-lenis-prevent>
+      <div className="ui-box flex min-h-[360px] w-full self-start flex-col justify-between border border-black/10 bg-white p-8" data-reveal data-lenis-prevent>
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--gold-dark)]">
             Map
@@ -30,7 +30,7 @@ export function MapFrame({ height = 520 }: { height?: number }) {
   }
 
   return (
-    <div className="ui-box border border-black/10 bg-white" data-reveal data-lenis-prevent>
+    <div className="ui-box w-full self-start border border-black/10 bg-white" data-reveal data-lenis-prevent>
       <GoogleMapsEmbed
         apiKey={apiKey}
         height={height}

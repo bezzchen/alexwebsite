@@ -23,7 +23,7 @@ export function PageHero({
   children,
 }: PageHeroProps) {
   return (
-    <section className="relative isolate min-h-[560px] overflow-hidden bg-black text-white md:min-h-[690px]">
+    <section className="relative isolate min-h-[620px] overflow-hidden bg-black text-white md:min-h-[calc(100svh-4rem)]">
       <Image
         src={image}
         alt={imageAlt}
@@ -35,7 +35,7 @@ export function PageHero({
       <div className="absolute inset-0 bg-gradient-to-r from-black/78 via-black/42 to-black/8" />
       <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/55 to-transparent" />
 
-      <div className="relative z-10 mx-auto flex min-h-[560px] w-full max-w-7xl flex-col justify-end px-5 pb-8 pt-28 md:min-h-[690px] md:px-8 md:pb-10">
+      <div className="relative z-10 mx-auto flex min-h-[620px] w-full max-w-7xl flex-col justify-end px-5 pb-8 pt-28 md:min-h-[calc(100svh-4rem)] md:px-8 md:pb-10">
         <div className="max-w-3xl" data-reveal-group>
           {eyebrow ? (
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-[var(--gold)]" data-reveal>
