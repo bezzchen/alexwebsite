@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { AmenityIcon } from "./AmenityIcon";
 import {
+  bookingUrl,
   contactDetails,
   hotelAlert,
   navItems,
@@ -37,7 +38,7 @@ export default function Footer() {
             Auckland connections.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <ButtonLink href="/book" variant="secondary">
+            <ButtonLink href={bookingUrl} variant="secondary">
               Book Now
             </ButtonLink>
             <ButtonLink href="/contact" variant="ghost">

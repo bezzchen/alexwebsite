@@ -1,7 +1,7 @@
 import { ButtonLink } from "@/src/components/ButtonLink";
 import { PageHero } from "@/src/components/PageHero";
 import { SectionIntro } from "@/src/components/SectionIntro";
-import { reviews } from "@/src/lib/site";
+import { bookingUrl, reviews } from "@/src/lib/site";
 import { createMetadata, seoPages } from "@/src/lib/seo";
 
 export const metadata = createMetadata(seoPages.reviews);
@@ -48,7 +48,7 @@ export default function Reviews() {
               title="More guest comments."
               body="More notes from guests who valued the location, room comfort, cleanliness, service, and quiet setting."
             />
-            <ButtonLink href="/book" variant="secondary">
+            <ButtonLink href={bookingUrl} variant="secondary">
               Book Now
             </ButtonLink>
           </div>

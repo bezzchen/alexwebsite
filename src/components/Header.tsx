@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ButtonLink } from "./ButtonLink";
 import { MobileMenu } from "./MobileMenu";
-import { navItems } from "@/src/lib/site";
+import { bookingUrl, navItems } from "@/src/lib/site";
 
 export default function Header() {
   return (
@@ -40,7 +40,7 @@ export default function Header() {
         </nav>
 
         <div className="hidden lg:block">
-          <ButtonLink href="https://book-directonline.com/properties/alexanderinndirect" variant="secondary">
+          <ButtonLink href={bookingUrl} variant="secondary">
             Book
           </ButtonLink>
         </div>

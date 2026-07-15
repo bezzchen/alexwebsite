@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { bookingUrl } from "@/src/lib/site";
 
 type NavItem = {
   label: string;
@@ -78,7 +79,7 @@ export function MobileMenu({ items }: MobileMenuProps) {
               </Link>
             ))}
             <Link
-              href="/book"
+              href={bookingUrl}
               onClick={() => setIsOpen(false)}
               className="mt-2 rounded-lg bg-[var(--gold)] px-4 py-3 text-center text-sm font-semibold uppercase tracking-[0.12em] text-black shadow-[0_10px_22px_rgba(0,0,0,0.12)] transition hover:bg-[var(--gold-dark)]"
             >

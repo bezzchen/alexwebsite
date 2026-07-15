@@ -3,7 +3,7 @@ import { AmenityIcon } from "@/src/components/AmenityIcon";
 import { ButtonLink } from "@/src/components/ButtonLink";
 import { PageHero } from "@/src/components/PageHero";
 import { SectionIntro } from "@/src/components/SectionIntro";
-import { homeIntro, roomTypes } from "@/src/lib/site";
+import { bookingUrl, homeIntro, roomTypes } from "@/src/lib/site";
 import { createMetadata, seoPages } from "@/src/lib/seo";
 
 export const metadata = createMetadata(seoPages.rooms);
@@ -99,7 +99,7 @@ export default function Rooms() {
             body={homeIntro[2]}
           />
           <div className="mt-8 flex flex-wrap gap-3">
-            <ButtonLink href="/book" variant="secondary">
+            <ButtonLink href={bookingUrl} variant="secondary">
               Book Now
             </ButtonLink>
             <ButtonLink href="/facilities" variant="ghost">

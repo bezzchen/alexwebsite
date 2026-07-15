@@ -7,6 +7,8 @@ export const navItems = [
   { label: "Contact", href: "/contact" },
 ];
 
+export const bookingUrl = "https://book-directonline.com/properties/alexanderinndirect";
+
 export const contactDetails = {
   name: "Alexander Inn",
   address: "21 Alpers Avenue, Newmarket 1023, Auckland, New Zealand",
