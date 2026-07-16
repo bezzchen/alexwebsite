@@ -16,7 +16,7 @@ export default function Rooms() {
         title="Quiet rooms in the heart of Newmarket."
         subtitle="Modern decor, luxury beds, and practical comforts."
         body="Choose upmarket rooms or self-contained suites close to Newmarket shopping, dining, hospitals, transport, and central Auckland."
-        image="/images/2.jpg"
+        image="/images/3.jpg"
         imageAlt="Alexander Inn guest room"
       />
 

@@ -49,7 +49,7 @@ export const seoPages = {
     description:
       "Explore Alexander Inn rooms and self-contained suites with luxury beds, double glazing, marble tiled bathrooms, free Wi-Fi, and central Auckland access.",
     path: "/rooms",
-    image: "/images/2.jpg",
+    image: "/images/3.jpg",
     keywords: [
       "Newmarket rooms",
       "Auckland suites",
@@ -62,7 +62,7 @@ export const seoPages = {
     description:
       "Review Alexander Inn facilities including free Wi-Fi, onsite parking subject to availability, daily servicing, secure entry, lift access, and reception support.",
     path: "/facilities",
-    image: "/images/1.jpg",
+    image: "/images/2.jpg",
     keywords: [
       "Newmarket accommodation facilities",
       "Auckland motel parking",
@@ -74,7 +74,7 @@ export const seoPages = {
     description:
       "Find Alexander Inn at 21 Alpers Avenue, Newmarket, close to Auckland shopping, cafes, hospitals, public transport, State Highway 1, and the CBD.",
     path: "/location",
-    image: "/images/0.jpg",
+    image: "/images/westfield.webp",
     keywords: [
       "Newmarket location",
       "21 Alpers Avenue",
@@ -87,7 +87,7 @@ export const seoPages = {
     description:
       "Read guest comments about Alexander Inn's clean rooms, quiet setting, comfortable beds, helpful staff, free parking, and Newmarket convenience.",
     path: "/reviews",
-    image: "/images/0.jpg",
+    image: "/images/alexanderinn.jpg",
     keywords: [
       "Alexander Inn reviews",
       "Newmarket accommodation reviews",
@@ -111,7 +111,7 @@ export const seoPages = {
     description:
       "Check Alexander Inn availability direct with reception for Newmarket rooms, suites, arrival support, and parking details before your Auckland stay.",
     path: "/book",
-    image: "/images/2.jpg",
+    image: "/images/4.jpg",
     keywords: [
       "book Alexander Inn",
       "book Newmarket accommodation",
@@ -123,7 +123,7 @@ export const seoPages = {
     description:
       "Read useful Alexander Inn updates about Newmarket location, quiet room comforts, parking, reception hours, and Auckland transport access.",
     path: "/news",
-    image: "/images/0.jpg",
+    image: "/images/skytower.jpg",
     keywords: [
       "Newmarket accommodation news",
       "Auckland stay tips",
@@ -135,7 +135,7 @@ export const seoPages = {
     description:
       "Read how Alexander Inn collects, uses, stores, and protects personal information submitted through this website.",
     path: "/privacy",
-    image: "/images/1.jpg",
+    image: "/images/5.jpg",
     keywords: [
       "Alexander Inn privacy policy",
       "Newmarket accommodation privacy",

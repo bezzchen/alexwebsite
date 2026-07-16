@@ -17,8 +17,8 @@ export default function Reviews() {
         title="What our guests say."
         subtitle="Clean, quiet, comfortable, and close."
         body="Alexander Inn guests regularly mention friendly service, spotless rooms, comfortable beds, free parking, and the convenience of Newmarket."
-        image="/images/0.jpg"
-        imageAlt="Alexander Inn exterior"
+        image="/images/alexanderinn.jpg"
+        imageAlt="Alexander Inn exterior in Newmarket"
       />
 
       <section className="mx-auto max-w-7xl px-5 py-20 md:px-8">

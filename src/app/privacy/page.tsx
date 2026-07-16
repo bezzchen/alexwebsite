@@ -71,8 +71,8 @@ export default function Privacy() {
         title="Privacy Policy."
         subtitle="How website information is handled."
         body="This policy explains how Alexander Inn collects, uses, stores, and protects personal information submitted through this website."
-        image="/images/1.jpg"
-        imageAlt="Alexander Inn balcony and guest area"
+        image="/images/5.jpg"
+        imageAlt="Alexander Inn guest room"
       />
 
       <section className="mx-auto max-w-7xl px-5 py-20 md:px-8">

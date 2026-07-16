@@ -15,8 +15,8 @@ export default function News() {
         title="Newmarket stay notes."
         subtitle="Local access, guest comforts, and arrival details."
         body="Plan around the parts of the stay guests ask about most: location, room comfort, parking, reception hours, and transport."
-        image="/images/0.jpg"
-        imageAlt="Alexander Inn exterior"
+        image="/images/skytower.jpg"
+        imageAlt="Sky Tower in central Auckland"
       />
 
       <section className="mx-auto max-w-7xl px-5 py-20 md:px-8">

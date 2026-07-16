@@ -23,8 +23,8 @@ export default function Location() {
         title="Close and convenient."
         subtitle="A practical Auckland base."
         body="Alexander Inn is conveniently situated at 21 Alpers Avenue, Newmarket, Auckland Central, New Zealand."
-        image="/images/0.jpg"
-        imageAlt="Alexander Inn exterior in Newmarket"
+        image="/images/westfield.webp"
+        imageAlt="Westfield Newmarket near Alexander Inn"
       />
 
       <section className="mx-auto grid max-w-7xl gap-10 px-5 py-20 lg:grid-cols-[0.9fr_1.1fr] lg:items-start md:px-8">

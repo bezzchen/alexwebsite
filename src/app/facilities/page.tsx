@@ -23,8 +23,8 @@ export default function Facilities() {
         title="Everything you need for an easy Newmarket stay."
         subtitle="What we offer"
         body="Free Wi-Fi, central Auckland access, serviced rooms, secure entry, reception support, and practical guest extras."
-        image="/images/0.jpg"
-        imageAlt="Alexander Inn exterior"
+        image="/images/2.jpg"
+        imageAlt="Alexander Inn reception and guest lounge"
       />
 
       <section className="mx-auto grid max-w-7xl gap-12 px-5 py-20 lg:grid-cols-[0.9fr_1.1fr] lg:items-start md:px-8">

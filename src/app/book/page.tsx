@@ -15,8 +15,8 @@ export default function Book() {
         title="Check availability direct with Alexander Inn."
         subtitle="Rooms and suites in Newmarket, Auckland."
         body="Use the stay details below, then contact reception for direct booking support, arrival questions, and parking availability."
-        image="/images/2.jpg"
-        imageAlt="Alexander Inn room"
+        image="/images/4.jpg"
+        imageAlt="Alexander Inn suite kitchenette"
       />
 
       <section className="mx-auto grid max-w-7xl gap-10 px-5 py-20 lg:grid-cols-[0.9fr_1.1fr] md:px-8">
